@@ -1,0 +1,27 @@
+.skillsList {
+  padding: 1rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25rem;
+  color: #4a5568;
+}
+
+.icon {
+  color: #4299e1;
+  width: 2.75rem;
+  height: 2.75rem;
+}

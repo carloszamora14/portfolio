@@ -1,7 +1,7 @@
+import SkillsList from './components/SkillsList/SkillsList';
+
 function App() {
-  return (
-    <div>App</div>
-  )
+  return <SkillsList />;
 }
 
-export default App
+export default App;

@@ -1,0 +1,103 @@
+.gradient {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.5) 5%,
+    transparent 5%
+  );
+  background-size: 5rem 5rem;
+  background-position: 0 calc(var(--index) * -15%);
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transition:
+    background-size 400ms ease-in-out,
+    background-position 400ms ease-in-out;
+}
+
+.nav {
+  --index: 0;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.navList {
+  padding: 3rem;
+  z-index: 1;
+}
+
+.navList > li {
+  padding: 1rem;
+}
+
+.navList:hover ~ .gradient {
+  background-size: 4.5rem 4.5rem;
+}
+
+.menu {
+  --width: min(20rem, 100%);
+  position: fixed;
+  flex-direction: column;
+  background-color: var(--dark);
+  gap: 0;
+  top: 0;
+  bottom: 0;
+  right: calc(-1 * var(--width));
+  text-align: start;
+  width: var(--width);
+  transition: 300ms ease-in-out;
+  padding: 10px;
+}
+
+.menu.active {
+  right: 0;
+}
+
+.menu li {
+  margin: 16px 0;
+}
+
+.menuItem > a {
+  color: var(--light);
+  font-size: 3rem;
+}
+
+.number {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+.nav:hover .menuItem {
+  opacity: 0.5;
+}
+
+.nav:hover .menuItem:hover {
+  opacity: 1;
+}
+
+.openButton,
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--light);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.openButton {
+  color: var(--dark);
+}
+
+.closeButton {
+  z-index: 1;
+  position: absolute;
+}
+
+@media screen and (min-width: 48rem) {
+  .navMobile {
+    display: none;
+  }
+}

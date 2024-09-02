@@ -1,0 +1,31 @@
+.navList {
+  display: none;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px 20px;
+  min-height: 70px;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.number {
+  margin-right: 0.25rem;
+}
+
+.navItem {
+  font-size: 1.25rem;
+  font-weight: 400;
+  padding-bottom: -1px;
+  border-bottom: 2px solid blue;
+}
+
+@media screen and (min-width: 48rem) {
+  .navList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+}

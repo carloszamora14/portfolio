@@ -1,0 +1,121 @@
+/* src/Hero.module.css */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 50px;
+  background-color: #f0f0f0;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.star {
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.headline {
+  font-size: 5rem;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  color: var(--dark);
+  line-height: 105%;
+}
+
+.description {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.decorations {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.topRightStar,
+.bottomLeftStar {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: pink;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.topRightStar {
+  top: 20px;
+  right: 20px;
+}
+
+.bottomLeftStar {
+  bottom: 20px;
+  left: 20px;
+}
+
+.topLeftShape,
+.bottomRightShape {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: red;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.topLeftShape {
+  top: 20px;
+  left: 60px;
+}
+
+.bottomRightShape {
+  bottom: 20px;
+  right: 60px;
+}

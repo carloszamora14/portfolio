@@ -1,0 +1,24 @@
+/* AboutSection.module.css */
+.about {
+  padding: 50px 20px;
+  background-color: #f0f4f8; /* Light background for a personal touch */
+  color: #333; /* Dark text color */
+  text-align: center;
+}
+
+.aboutContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.aboutTitle {
+  font-size: 2.5rem;
+  color: #007bff; /* Accent color for the title */
+  margin-bottom: 20px;
+}
+
+.aboutText {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}

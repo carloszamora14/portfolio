@@ -1,40 +1,19 @@
 import styles from './Nav.module.css';
+import { sections } from '../../data/sections.js';
 
 function Nav() {
   return (
     <ul className={styles.navList}>
-      <li className={styles.menuItem}>
-        <a href="#home">
-          <span className={styles.number} aria-hidden="true">
-            01
-          </span>
-          <span>Home</span>
-        </a>
-      </li>
-      <li className={styles.menuItem}>
-        <a href="#projects">
-          <span className={styles.number} aria-hidden="true">
-            02
-          </span>
-          <span>Projects</span>
-        </a>
-      </li>
-      <li className={styles.menuItem}>
-        <a href="#about">
-          <span className={styles.number} aria-hidden="true">
-            03
-          </span>
-          <span>About</span>
-        </a>
-      </li>
-      <li className={styles.menuItem}>
-        <a href="#contact">
-          <span className={styles.number} aria-hidden="true">
-            04
-          </span>
-          <span>Contact</span>
-        </a>
-      </li>
+      {sections.map((section, index) => (
+        <li className={styles.menuItem} key={section.name}>
+          <a href={section.url} className={styles.menuLink}>
+            <span className={styles.number} aria-hidden="true">
+              {String(index).padStart(2, '0')}.
+            </span>
+            <span>{section.name}</span>
+          </a>
+        </li>
+      ))}
     </ul>
   );
 }

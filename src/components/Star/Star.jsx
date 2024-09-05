@@ -1,22 +1,22 @@
 import useMouseTilt from '../../hooks/useMouseTilt';
 import styles from './Star.module.css';
 
-const Star = ({ width = '240', height = '240', fill = 'black' }) => {
+function Star({ containerClassName, animating = true }) {
   const { containerRef, handleMouseMove } = useMouseTilt();
 
   return (
     <div
-      className={styles.container}
+      className={`${styles.container} ${containerClassName}`}
       ref={containerRef}
       onMouseMove={handleMouseMove}
       aria-hidden="true"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={width}
-        height={height}
+        width="24"
+        height="24"
         viewBox="0 0 20 20"
-        className={styles.star}
+        className={`${styles.star} ${animating ? styles.animating : ''}`}
       >
         <path
           d="M10 0
@@ -24,11 +24,11 @@ const Star = ({ width = '240', height = '240', fill = 'black' }) => {
            C15 10.5, 10 11.5, 10 20
            C10 11.5, 5 10.5, 0 10
            C5 9.5, 9.5 10, 10 0 Z"
-          fill={fill}
+          fill="black"
         />
       </svg>
     </div>
   );
-};
+}
 
 export default Star;

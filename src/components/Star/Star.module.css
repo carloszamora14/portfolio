@@ -1,38 +1,55 @@
 .container {
+  --x-rotation: 0;
+  --y-rotation: 0;
+
+  --facing: -1;
+  --width: 1.5rem;
+  --height: 1.5rem;
+  --fill: #000000;
+
   width: fit-content;
   perspective: 800px;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 100ms cubic-bezier(0, 0, 0.2, 1);
+  transform: rotateX(var(--x-rotation)) rotateY(var(--y-rotation));
 }
 
 .star {
-  --sign: -1;
+  width: var(--width);
+  height: var(--height);
   display: inline-block;
+}
+
+.star.animating {
+  --dist: min(2rem, calc(var(--height) / 2));
   animation: up-down 1500ms infinite linear;
+}
+
+.star > path {
+  fill: var(--fill);
 }
 
 @keyframes up-down {
   0% {
-    transform: translateY(0) rotateY(calc(var(--sign) * 35deg)) rotateX(0);
+    transform: translateY(0) rotateY(calc(var(--facing) * 35deg)) rotateX(0);
   }
 
   25% {
-    transform: translateY(-20px) rotateY(calc(var(--sign) * 35deg))
-      rotateX(18deg);
+    transform: translateY(var(--dist, 1rem))
+      rotateY(calc(var(--facing) * 35deg)) rotateX(18deg);
   }
 
   50% {
-    transform: translateY(0px) rotateY(calc(var(--sign) * 35deg))
-      rotateX(0);
+    transform: translateY(0) rotateY(calc(var(--facing) * 35deg)) rotateX(0);
   }
 
   75% {
-    transform: translateY(20px) rotateY(calc(var(--sign) * 35deg))
-      rotateX(-18deg);
+    transform: translateY(calc(var(--dist, 1rem) * -1))
+      rotateY(calc(var(--facing) * 35deg)) rotateX(-18deg);
   }
 
   100% {
-    transform: translateY(0) rotateY(calc(var(--sign) * 35deg)) rotateX(0);
+    transform: translateY(0) rotateY(calc(var(--facing) * 35deg)) rotateX(0);
   }
 }

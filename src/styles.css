@@ -1,12 +1,16 @@
 :root {
-  --clr-white: #fdfbfb;
-  --clr-red: #ef4770;
-  --clr-green: #0dd6c3;
-  --clr-turquoise: #26d6ec;
-  --clr-purple: #ae75db;
+  --clr-white: #FDFBFB;
+  --clr-red: #EF4770;
+  --clr-green: #0DD6C3;
+  --clr-turquoise: #34DAEF;
+  --clr-purple: #AE75DB;
   --clr-dark: #161615;
-  --clr-lavender: #f3e4ff;
+  --clr-lavender: #F3E4FF;
+  --clr-electric-blue: #1700FE;
   --clr-midnight-blue: #073758;
+  --clr-gray: #676A6A;
+  --clr-dark-gray: #464749;
+  --clr-white-overlay: #FDFBFB20;
 
   --ff-headings: 'Poppins', sans-serif;
   --ff-text: 'Inter', sans-serif;
@@ -24,6 +28,10 @@
   --fw-semi-bold: 600;
   --fw-bold: 700;
 
+  --z-index-background: -1;
+  --z-index-default: 0;
+  --z-index-foreground: 1;
+  --z-index-overlay: 2;
   --z-index-header: 10;
   --z-index-menu: 100;
 }
@@ -64,6 +72,7 @@ img {
 }
 
 body {
+  font-family: var(--ff-text);
   background-color: var(--clr-white);
 }
 

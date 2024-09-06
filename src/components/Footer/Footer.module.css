@@ -1,78 +1,103 @@
 .footer {
-  background: linear-gradient(to right, black, darkgreen);
-  color: white;
-  padding: 20px;
-  text-align: left;
+  background-color: var(--clr-dark);
 }
 
-.newSection {
+.contentWrapper {
+  padding: 4rem 0;
+}
+
+.description {
+  font-family: var(--ff-text);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-xs);
+  color: var(--clr-light-gray);
+  margin-top: 2rem;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.email {
   display: flex;
   align-items: center;
-}
-
-.newSection h2 {
-  font-size: 2em;
-  font-weight: bold;
-  margin: 0;
-}
-
-.underline {
-  height: 4px;
-  background-color: limegreen;
-  flex-grow: 1;
-  margin-left: 10px;
-}
-
-.footerContent {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.column {
-  flex: 1;
-}
-
-.column h3 {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-.column ul {
-  list-style: none;
-  padding: 0;
-}
-
-.column ul li {
-  margin-bottom: 5px;
-}
-
-.socialMedia {
-  display: flex;
-  gap: 10px;
-}
-
-.socialMedia li {
-  font-size: 1.5em;
-}
-
-.footerBottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.footerBottom p {
-  margin: 0;
-}
-
-.links a {
-  color: white;
-  margin-left: 20px;
+  gap: 0.5rem;
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-sm);
   text-decoration: none;
+  color: var(--clr-green);
+  transition:
+    opacity 200ms ease-in-out,
+    color 250ms ease-in-out;
 }
 
-.links a:hover {
-  text-decoration: underline;
+.email:active {
+  opacity: 0.7;
+}
+
+.email:active .emailIcon {
+  transform: scale(0.9);
+}
+
+.emailIcon {
+  transition: transform 200ms ease-in-out;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.bottomBanner {
+  padding: 0.5rem 0;
+  background-color: var(--clr-turquoise);
+  font-family: var(--ff-text);
+  font-weight: var(--fw-light);
+  font-size: var(--fs-xxs);
+  color: var(--clr-dark);
+  text-transform: uppercase;
+}
+
+@keyframes giggle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(5deg);
+  }
+
+  50% {
+    transform: rotate(-5deg);
+  }
+
+  75% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .email:hover {
+    color: var(--clr-lavender);
+  }
+
+  .email:hover .emailIcon {
+    animation: giggle 600ms ease-in-out infinite;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .contactInfo {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3rem;
+  }
 }

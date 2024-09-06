@@ -1,0 +1,33 @@
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-lg);
+  line-height: 1;
+  color: var(--clr-midnight-blue);
+}
+
+.heading.dark {
+  color: var(--clr-lavender);
+}
+
+.subheading {
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-sm);
+  letter-spacing: 2px;
+  color: var(--clr-turquoise);
+}
+
+.star {
+  --height: var(--fs-xl);
+  --width: calc(var(--fs-xl) * 0.75);
+  --fill: var(--clr-lavender);
+}

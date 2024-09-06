@@ -1,57 +1,50 @@
-import React from 'react';
+import { FaLinkedinIn, FaEnvelope } from 'react-icons/fa';
+import { RiGithubLine } from 'react-icons/ri';
+import SectionHeader from '../SectionHeader/SectionHeader';
 import styles from './Footer.module.css';
+import SocialMediaButton from '../SocialMediaButton/SocialMediaButton';
 
-const Footer = () => {
+function Footer() {
+  const emailAddress = 'czamora5@ucol.mx';
+
   return (
-    <footer className={styles.footer}>
-      <div className={styles.newSection}>
-        <h2>NEW</h2>
-        <div className={styles.underline}></div>
-      </div>
-      <div className={styles.footerContent}>
-        <div className={styles.column}>
-          <h3>Explore</h3>
-          <ul>
-            <li>Enterprise</li>
-            <li>AI Processor Models</li>
-            <li>Team Workspaces</li>
-          </ul>
-        </div>
-        <div className={styles.column}>
-          <h3>Company</h3>
-          <ul>
-            <li>News</li>
-            <li>Careers</li>
-            <li>Contact Us</li>
-          </ul>
-        </div>
-        <div className={styles.column}>
-          <h3>Connect</h3>
-          <ul className={styles.socialMedia}>
-            <li>
-              <i className="fab fa-facebook-f"></i>
-            </li>
-            <li>
-              <i className="fab fa-twitter"></i>
-            </li>
-            <li>
-              <i className="fab fa-instagram"></i>
-            </li>
-            <li>
-              <i className="fab fa-linkedin-in"></i>
-            </li>
-          </ul>
+    <footer id="contact" className={styles.footer}>
+      <div className={`container ${styles.contentWrapper}`}>
+        <SectionHeader
+          heading="Contact me"
+          subheading="Say hello."
+          darkVariant={true}
+        />
+        <p className={styles.description}>
+          Feel free to contact me if you have any questions or want to connect.
+        </p>
+        <div className={styles.contactInfo}>
+          <a href={`mailto:${emailAddress}`} className={styles.email}>
+            <FaEnvelope className={styles.emailIcon} />
+            {emailAddress}
+          </a>
+          <div className={styles.socials}>
+            <SocialMediaButton
+              Icon={FaLinkedinIn}
+              text="@carloszamora14"
+              url="https://www.linkedin.com/in/carloszamora14/"
+              label="Visit my LinkedIn profile"
+            />
+            <SocialMediaButton
+              Icon={RiGithubLine}
+              text="@carloszamora14"
+              url="https://github.com/carloszamora14"
+              label="Visit my GitHub profile"
+            />
+          </div>
         </div>
       </div>
-      <div className={styles.footerBottom}>
-        <p>© 2021 [Your Company Name]</p>
-        <div className={styles.links}>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-        </div>
+
+      <div className={styles.bottomBanner}>
+        <div className="container">Made with 🖤 by Carlos Zamora</div>
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

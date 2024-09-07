@@ -1,27 +1,76 @@
-.skillsList {
-  padding: 1rem;
+.section {
+  margin: 3rem 0;
 }
 
-.title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.description {
+  font-family: var(--ff-text);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-sm);
+  color: var(--clr-gray);
+  max-width: 60rem;
+}
+
+.description ~ .description {
+  margin-top: 1.25rem;
 }
 
 .list {
-  list-style: none;
-  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--fs-xl), 1fr));
+  gap: 1.5rem;
 }
 
 .listItem {
+  position: relative;
   display: flex;
   align-items: center;
-  margin-bottom: 0.25rem;
-  color: #4a5568;
+  justify-content: center;
+  transition: opacity 200ms ease-in-out, transform 250ms ease-in-out;
+}
+
+.listItem::before {
+  content: '';
+  position: absolute;
+  inset: -0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 200ms ease-in-out;
+  pointer-events: none;
+}
+
+.listHovered .listItem {
+  opacity: 0.2;
+}
+
+.listItem.highlight {
+  opacity: 1;
+}
+
+.listItem:hover {
+  transform: translateY(-4px);
+}
+
+.listItem:hover::before {
+  background-color: #34d9ef1b;
 }
 
 .icon {
-  color: #4299e1;
-  width: 2.75rem;
-  height: 2.75rem;
+  width: var(--fs-xl);
+  height: var(--fs-xl);
+}
+
+@media screen and (min-width: 80rem) {
+  .contentWrapper {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .skillsDisplay {
+    min-width: 40%;
+  }
 }

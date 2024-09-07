@@ -1,4 +1,4 @@
-export const skills = [
+const skills = [
   { url: '/tailwind.svg', name: 'Tailwind', type: 'Frontend' },
   { url: '/bootstrap.svg', name: 'Bootstrap', type: 'Frontend' },
   { url: '/c.svg', name: 'C', type: 'Language' },
@@ -23,3 +23,5 @@ export const skills = [
   { url: '/bash.svg', name: 'Bash', type: 'Tool' },
   { url: '/sass.svg', name: 'Sass', type: 'Frontend' },
 ];
+
+export default skills;

@@ -1,19 +1,21 @@
 :root {
-  --clr-white: #FDFBFB;
-  --clr-red: #EF4770;
-  --clr-green: #0DD6C3;
-  --clr-turquoise: #34DAEF;
-  --clr-purple: #AE75DB;
+  --clr-white: #fdfbfb;
+  --clr-red: #ef4770;
+  --clr-green: #0dd6c3;
+  --clr-turquoise: #34daef;
+  --clr-purple: #ae75db;
   --clr-dark: #161615;
-  --clr-lavender: #F3E4FF;
-  --clr-electric-blue: #1700FE;
+  --clr-lavender: #f3e4ff;
+  --clr-electric-blue: #1700fe;
   --clr-midnight-blue: #073758;
-  --clr-gray: #676A6A;
+  --clr-light-gray: #9b9c9c;
+  --clr-gray: #676a6a;
   --clr-dark-gray: #464749;
-  --clr-white-overlay: #FDFBFB20;
+  --clr-white-overlay: #fdfbfb20;
 
   --ff-headings: 'Poppins', sans-serif;
   --ff-text: 'Inter', sans-serif;
+  --ff-monospace: 'Courier New', Courier, monospace;
 
   --fs-xxl: 3rem;
   --fs-xl: 2rem;
@@ -74,6 +76,7 @@ img {
 body {
   font-family: var(--ff-text);
   background-color: var(--clr-white);
+  overflow-x: hidden;
 }
 
 .sr-only {

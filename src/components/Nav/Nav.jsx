@@ -1,4 +1,4 @@
-import { navigationLinks } from '../../data/navigationLinks';
+import navigationLinks from '../../data/navigationLinks';
 import styles from './Nav.module.css';
 
 function Nav() {

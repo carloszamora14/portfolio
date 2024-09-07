@@ -1,26 +1,34 @@
 import Button from '../Button/Button';
+import Star from '../Star/Star';
 import styles from './Hero.module.css';
 
-const Hero = () => {
+function Hero() {
   return (
-    <div className={styles.hero}>
-      <div className={styles.logo}>
-        <div className={styles.star}></div>
+    <section className={styles.hero}>
+      <div className="container" style={{ position: 'relative' }}>
+        <div className={`${styles.content}`}>
+          <h1 className={styles.headline}>
+            I&apos;m Carlos Zamora, making ideas tangible with code and
+            creativity
+          </h1>
+          <p className={styles.description}>
+            Hello! I enjoy tackling new problems and come up with effective
+            solutions. With a solid grounding in coding, sharp analytical
+            skills, and a passion for design, I&apos;m excited to take on
+            projects that make a difference.
+          </p>
+          <Button>See my projects</Button>
+        </div>
+
+        <div className={styles.decorations} aria-hidden="true">
+          <Star containerClassName={styles.star1} />
+          <Star containerClassName={styles.star2} />
+          <Star containerClassName={styles.star3} />
+          <Star containerClassName={styles.star4} />
+        </div>
       </div>
-      <h1 className={styles.headline}>A powerful and catchy phrase</h1>
-      <p className={styles.description}>
-        I'm passionate about crafting experiences that are engaging, accessible,
-        and user-centric.
-      </p>
-      <Button>See my projects</Button>
-      <div className={styles.decorations}>
-        <div className={styles.topRightStar}></div>
-        <div className={styles.bottomLeftStar}></div>
-        <div className={styles.topLeftShape}></div>
-        <div className={styles.bottomRightShape}></div>
-      </div>
-    </div>
+    </section>
   );
-};
+}
 
 export default Hero;

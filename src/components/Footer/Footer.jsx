@@ -1,8 +1,9 @@
 import { FaLinkedinIn, FaEnvelope } from 'react-icons/fa';
 import { RiGithubLine } from 'react-icons/ri';
+import { IoHeart } from 'react-icons/io5';
 import SectionHeader from '../SectionHeader/SectionHeader';
-import styles from './Footer.module.css';
 import SocialMediaButton from '../SocialMediaButton/SocialMediaButton';
+import styles from './Footer.module.css';
 
 function Footer() {
   const emailAddress = 'czamora5@ucol.mx';
@@ -41,7 +42,9 @@ function Footer() {
       </div>
 
       <div className={styles.bottomBanner}>
-        <div className="container">Made with 🖤 by Carlos Zamora</div>
+        <div className={`container ${styles.bottomContent}`}>
+          Made with <IoHeart className={styles.heart} /> by Carlos Zamora
+        </div>
       </div>
     </footer>
   );

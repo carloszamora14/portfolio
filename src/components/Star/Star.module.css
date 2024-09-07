@@ -23,32 +23,28 @@
 
 .star.animating {
   --dist: min(2rem, calc(var(--height) / 2));
-  animation: up-down 1500ms infinite linear;
+  animation: upDown 1500ms infinite linear;
 }
 
 .star > path {
   fill: var(--fill);
 }
 
-@keyframes up-down {
+@keyframes upDown {
   0% {
     transform: translateY(0) rotateY(calc(var(--facing) * 35deg)) rotateX(0);
   }
-
   25% {
     transform: translateY(var(--dist, 1rem))
       rotateY(calc(var(--facing) * 35deg)) rotateX(18deg);
   }
-
   50% {
     transform: translateY(0) rotateY(calc(var(--facing) * 35deg)) rotateX(0);
   }
-
   75% {
     transform: translateY(calc(var(--dist, 1rem) * -1))
       rotateY(calc(var(--facing) * 35deg)) rotateX(-18deg);
   }
-
   100% {
     transform: translateY(0) rotateY(calc(var(--facing) * 35deg)) rotateX(0);
   }

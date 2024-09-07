@@ -1,35 +1,21 @@
-.btn {
+.button {
   font-family: 'Poppins', sans-serif;
   font-size: 1.125rem;
   font-weight: 500;
   padding: 1rem 2rem;
   border-radius: 0.75rem;
-  background-color: var(--dark);
-  /* background-color: black; */
-  color: var(--light);
+  background-color: var(--clr-dark);
+  color: var(--clr-white);
   cursor: pointer;
-  /* animation: anim 1200ms ease-in-out infinite alternate; */
-  transition: background-color 250ms ease-in, transform 250ms ease-in;
-  border: none;
+  border: 1px solid var(--clr-dark);
+  transition:
+    background-color 250ms ease-in,
+    transform 250ms ease-in;
+  outline-offset: 4px;
 }
 
-.btn:hover {
-  transform: scale(0.9);
-  background-color: var(--light);
-  border: 1px solid black;
-  color: black;
-}
-
-.btn:focus {
-  outline-color: blue;
-}
-
-@keyframes anim {
-  from {
-    transform: translateY(0) scale(var(--scale, 1));
-  }
-
-  to {
-    transform: translateY(-8px) scale(var(--scale, 1));
-  }
+.button:hover {
+  transform: scale(0.95);
+  background-color: var(--clr-white);
+  color: var(--clr-dark);
 }

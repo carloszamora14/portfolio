@@ -5,6 +5,8 @@ function useMouseTilt() {
 
   const handleMouseMove = evt => {
     const container = containerRef.current;
+    if (!container) return;
+
     const rect = container.getBoundingClientRect();
 
     const x = evt.clientX - rect.left;
@@ -16,7 +18,8 @@ function useMouseTilt() {
     const xRotation = (xPercentage - 0.5) * 70;
     const yRotation = (0.5 - yPercentage) * 70;
 
-    container.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+    container.style.setProperty('--x-rotation', `${xRotation}deg`);
+    container.style.setProperty('--y-rotation', `${yRotation}deg`);
   };
 
   return { containerRef, handleMouseMove };

@@ -5,19 +5,22 @@ function useFocusTrap(isActive, onClose) {
   const lastElementRef = useRef(null);
 
   useEffect(() => {
-    if (isActive) {
+    const firstElement = firstElementRef.current;
+    const lastElement = lastElementRef.current;
+    if (!firstElement || !lastElement) return;
 
+    if (isActive) {
       const handleKeyDown = evt => {
         if (evt.key === 'Tab') {
           if (evt.shiftKey) {
-            if (document.activeElement === firstElementRef.current) {
+            if (document.activeElement === firstElement) {
               evt.prevtDefault();
-              lastElementRef.current.focus();
+              lastElement.focus();
             }
           } else {
-            if (document.activeElement === lastElementRef.current) {
+            if (document.activeElement === lastElement) {
               evt.preventDefault();
-              firstElementRef.current.focus();
+              firstElement.focus();
             }
           }
         } else if (evt.key === 'Escape') {

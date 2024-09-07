@@ -1,9 +1,10 @@
-/* src/Hero.module.css */
 .hero {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 50px;
-  background-color: #f0f0f0;
+  padding: 4rem 0;
+  height: 100%;
 }
 
 .logo {
@@ -12,35 +13,20 @@
   left: 20px;
 }
 
-.star {
-  width: 50px;
-  height: 50px;
-  background-color: blue;
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
-}
-
 .headline {
-  font-size: 5rem;
-  font-weight: bold;
-  font-family: 'Poppins', sans-serif;
-  color: var(--dark);
-  line-height: 105%;
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  font-family: var(--ff-headings);
+  color: var(--clr-midnight-blue);
+  line-height: 1.1;
 }
 
 .description {
-  font-size: 1.2em;
-  margin-bottom: 30px;
+  font-size: var(--fs-xxs);
+  font-family: var(--ff-text);
+  font-weight: var(--fw-regular);
+  line-height: 1.5;
+  margin: 1.25rem 0 1.5rem;
 }
 
 .button {
@@ -53,11 +39,16 @@
   cursor: pointer;
 }
 
+.content {
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+  z-index: 1;
+}
+
 .decorations {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+  inset: 0;
 }
 
 .topRightStar,
@@ -80,9 +71,9 @@
   );
 }
 
-.topRightStar {
-  top: 20px;
-  right: 20px;
+.topLeftStar {
+  left: 10%;
+  top: 50%;
 }
 
 .bottomLeftStar {
@@ -119,3 +110,76 @@
   bottom: 20px;
   right: 60px;
 }
+
+.star {
+  position: absolute;
+  width: 10vw; /* Responsive width based on viewport */
+  height: auto; /* Maintains aspect ratio */
+  z-index: 0; /* Ensures icons are behind the content */
+  opacity: 0.6; /* Slight transparency */
+  transition: width 0.3s ease; /* Smooth transition for resizing */
+}
+
+/* Positioning for Each Star */
+.star1 {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+
+  --width: 120px;
+  --height: 120px;
+  --fill: var(--clr-red);
+  --facing: -1;
+}
+
+.star2 {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+
+  --facing: -1;
+  --width: 150px;
+  --height: 150px;
+  --fill: var(--clr-turquoise);
+}
+
+.star3 {
+  position: absolute;
+  bottom: 15%;
+  left: 15%;
+
+  --width: 80px;
+  --height: 80px;
+  --fill: var(--clr-purple);
+  --facing: 1;
+}
+
+.star4 {
+  position: absolute;
+  bottom: 10%;
+  right: 20%;
+
+  --width: 200px;
+  --height: 200px;
+  --fill: var(--clr-green);
+  --facing: 1;
+}
+
+/* Responsive Adjustments Using Media Queries */
+/* @media (max-width: 1024px) {
+  .star {
+    width: 8vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .star {
+    width: 6vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .star {
+    width: 4vw;
+  }
+} */

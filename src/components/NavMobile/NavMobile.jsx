@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { RiMenu2Line } from 'react-icons/ri';
 import { IoCloseOutline } from 'react-icons/io5';
 import useFocusTrap from '../../hooks/useTrapFocus';
-import { navigationLinks } from '../../data/navigationLinks';
+import navigationLinks from '../../data/navigationLinks';
 import styles from './NavMobile.module.css';
 
 function NavMobile() {

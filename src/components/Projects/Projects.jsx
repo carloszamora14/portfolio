@@ -1,34 +1,24 @@
-import React from 'react';
+import SectionHeader from '../SectionHeader/SectionHeader';
 import styles from './Projects.module.css';
 
-const Projects = () => {
+function Projects() {
   return (
-    <section className={styles.projectsSection}>
-      <h2>My Projects</h2>
-      <div className={styles.projectsContainer}>
-        <div className={styles.projectCard}>
-          <img src="project1.jpg" alt="Project 1" />
-          <h3>Project Title 1</h3>
-          <p>Short description of the project.</p>
-        </div>
-        <div className={styles.projectCard}>
-          <img src="project2.jpg" alt="Project 2" />
-          <h3>Project Title 2</h3>
-          <p>Short description of the project.</p>
-        </div>
-        <div className={styles.projectCard}>
-          <img src="project3.jpg" alt="Project 3" />
-          <h3>Project Title 3</h3>
-          <p>Short description of the project.</p>
-        </div>
-        <div className={styles.projectCard}>
-          <img src="project4.jpg" alt="Project 4" />
-          <h3>Project Title 4</h3>
-          <p>Short description of the project.</p>
-        </div>
+    <section id="projects" className={styles.section}>
+      <div className="container">
+        <SectionHeader
+          heading="Projects"
+          subheading="A glimpse into what I've built."
+        />
+        <p className={styles.description}>
+          Here you&apos;ll find a selection of projects I&apos;ve worked on,
+          from high-fidelity prototypes to web apps. These showcase the skills
+          I&apos;ve acquired and my dedication to learning and improving with
+          every challenge.
+        </p>
+        <div className={styles.content}></div>
       </div>
     </section>
   );
-};
+}
 
 export default Projects;

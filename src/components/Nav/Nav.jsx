@@ -1,20 +1,19 @@
+import { navigationLinks } from '../../data/navigationLinks';
 import styles from './Nav.module.css';
-import { sections } from '../../data/sections.js';
 
 function Nav() {
   return (
-    <ul className={styles.navList}>
-      {sections.map((section, index) => (
-        <li className={styles.menuItem} key={section.name}>
-          <a href={section.url} className={styles.menuLink}>
-            <span className={styles.number} aria-hidden="true">
-              {String(index).padStart(2, '0')}.
-            </span>
-            <span>{section.name}</span>
-          </a>
-        </li>
-      ))}
-    </ul>
+    <nav aria-label="Main navigation">
+      <ul className={styles.navList}>
+        {navigationLinks.map(link => (
+          <li key={link.name}>
+            <a href={link.url} className={styles.navLink}>
+              {link.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }
 

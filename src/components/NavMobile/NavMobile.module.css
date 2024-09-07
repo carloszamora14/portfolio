@@ -1,13 +1,13 @@
-.gradient {
+.gradientBackground {
   background-image: radial-gradient(
     rgba(255, 255, 255, 0.5) 5%,
     transparent 5%
   );
   background-size: 5rem 5rem;
-  background-position: 0 calc(var(--index) * -15%);
+  background-position: 0 calc(var(--hovered-index) * -15%);
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: var(--z-index-default);
   transition:
     background-size 400ms ease-in-out,
     background-position 400ms ease-in-out;
@@ -16,62 +16,62 @@
 .nav {
   --index: 0;
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
+  z-index: var(--z-index-foreground);
 }
 
 .navList {
   padding: 3rem;
-  z-index: 1;
+  z-index: var(--z-index-foreground);
 }
 
-.navList > li {
+.navItem {
   padding: 1rem;
 }
 
-.navList:hover ~ .gradient {
+.navList:hover ~ .gradientBackground {
   background-size: 4.5rem 4.5rem;
 }
 
-.menu {
+.sidebar {
   --width: min(20rem, 100%);
+
   position: fixed;
   flex-direction: column;
-  background-color: var(--dark);
+  background-color: var(--clr-midnight-blue);
   gap: 0;
   top: 0;
   bottom: 0;
+  overflow-y: auto;
   right: calc(-1 * var(--width));
   text-align: start;
   width: var(--width);
   transition: 300ms ease-in-out;
-  padding: 10px;
 }
 
-.menu.active {
+.sidebar.active {
   right: 0;
 }
 
-.menu li {
+.sidebar li {
   margin: 16px 0;
 }
 
-.menuItem > a {
-  color: var(--light);
-  font-size: 3rem;
+.itemLink {
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-semi-bold);
+  color: var(--clr-turquoise);
+  font-size: var(--fs-xl);
+  text-decoration: none;
 }
 
-.number {
-  font-size: 2rem;
-  margin-right: 0.5rem;
-}
-
-.nav:hover .menuItem {
+.nav:hover .itemLink {
   opacity: 0.5;
 }
 
-.nav:hover .menuItem:hover {
+.nav:hover .itemLink:hover {
   opacity: 1;
 }
 
@@ -80,20 +80,39 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  color: var(--light);
   background-color: transparent;
   border: none;
+  padding: 0;
   cursor: pointer;
 }
 
 .openButton {
-  color: var(--dark);
+  font-size: var(--fs-lg);
+  color: var(--clr-dark);
 }
 
 .closeButton {
-  z-index: 1;
   position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: var(--fs-xl);
+  color: rgb(220, 225, 232);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  z-index: var(--z-index-overlay);
+  transition:
+    transform 150ms ease-in-out,
+    border-color 150ms ease-in-out;
+}
+
+.closeButton:active {
+  transform: scale(0.8);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .closeButton:hover {
+    border: 2px solid currentColor;
+  }
 }
 
 @media screen and (min-width: 48rem) {

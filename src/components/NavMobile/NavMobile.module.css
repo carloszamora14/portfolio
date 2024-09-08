@@ -40,7 +40,7 @@
 
   position: fixed;
   flex-direction: column;
-  background-color: var(--clr-midnight-blue);
+  background-color: var(--clr-dark);
   gap: 0;
   top: 0;
   bottom: 0;
@@ -63,6 +63,7 @@
   font-family: var(--ff-headings);
   font-weight: var(--fw-semi-bold);
   color: var(--clr-turquoise);
+  color: var(--clr-lavender);
   font-size: var(--fs-xl);
   text-decoration: none;
 }
@@ -97,6 +98,7 @@
   left: 1rem;
   font-size: var(--fs-xl);
   color: rgb(220, 225, 232);
+  color: var(--clr-lavender);
   border: 2px solid transparent;
   border-radius: 50%;
   z-index: var(--z-index-overlay);

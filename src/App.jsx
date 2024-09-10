@@ -1,21 +1,19 @@
-import Header from './components/Header/Header';
-import Hero from './components/Hero/Hero';
-import Projects from './components/Projects/Projects';
-import SkillsList from './components/SkillsList/SkillsList';
-import Footer from './components/Footer/Footer';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Layout from './components/Layout/Layout';
+import LandingPage from './pages/LandingPage';
+import ProjectPage from './pages/ProjectPage';
 import './styles.css';
 
 function App() {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <Projects />
-        <SkillsList />
-      </main>
-      <Footer />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<LandingPage />} />
+          <Route path=":projectName" element={<ProjectPage />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

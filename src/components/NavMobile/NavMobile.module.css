@@ -34,7 +34,7 @@
   transition:
     transform 250ms ease-in,
     opacity 250ms ease-in;
-  transition-delay: calc(var(--anim-duration) + var(--index) * 100ms);
+  transition-delay: calc(var(--anim-duration) + (var(--index) - 2.5) * 100ms);
 }
 
 .navList:hover ~ .gradientBackground {

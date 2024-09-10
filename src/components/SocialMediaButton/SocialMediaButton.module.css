@@ -1,15 +1,16 @@
 .link {
   display: inline-block;
-  font-family: var(--ff-monospace);
+  font-family: var(--ff-text);
   text-decoration: none;
-  color: var(--clr-dark);
+  color: var(--clr-light-gray);
   border-radius: 50vw;
-  background-color: var(--clr-white);
+  border: 1px solid var(--clr-light-gray);
   overflow: hidden;
+  outline-offset: 3px;
 }
 
 .link:active {
-  background-color: var(--clr-light-gray);
+  border-color: var(--clr-gray);
 }
 
 .link:active .iconWrapper {
@@ -30,7 +31,7 @@
   padding: var(--padding);
   width: calc(var(--padding) + var(--fs-md));
   height: calc(var(--padding) + var(--fs-md));
-  font-size: var(--fs-md);
+  font-size: var(--fs-sm);
   border-radius: 50%;
   overflow: hidden;
   transition: transform 200ms ease-in-out;
@@ -42,19 +43,20 @@
   top: 50%;
   left: 50%;
   line-height: 1;
-  color: var(--clr-dark);
+  color: var(--clr-light-gray);
   transform: translate(-50%, -50%);
 }
 
 .text {
-  font-size: var(--fs-xs);
+  font-size: var(--fs-xxs);
+  font-weight: var(--fw-light);
   width: 0;
   transition: width 200ms ease-in-out 200ms;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .link:hover .text {
-    width: calc(var(--length) * 1ch + var(--padding));
+    width: calc(var(--length) * 1ch);
   }
 
   .link:hover .iconWrapper {

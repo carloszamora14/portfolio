@@ -53,12 +53,12 @@
 }
 
 .bottomBanner {
-  padding: 0.5rem 0;
-  background-color: var(--clr-turquoise);
+  /* padding: 0.5rem 0;
+  background-color: var(--clr-turquoise); */
   font-family: var(--ff-text);
   font-weight: var(--fw-light);
   font-size: var(--fs-xxs);
-  color: var(--clr-dark);
+  color: var(--clr-light-gray);
   text-transform: uppercase;
 }
 
@@ -66,6 +66,8 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--clr-light-gray);
 }
 
 .heart {

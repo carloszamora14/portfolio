@@ -10,7 +10,8 @@
   --clr-midnight-blue: #073758;
   --clr-light-gray: #9b9c9c;
   --clr-gray: #676a6a;
-  --clr-dark-gray: #464749;
+  --clr-dark-gray: #2c2c2c;
+  /* --clr-dark-gray: #464749; */
   --clr-white-overlay: #fdfbfb20;
 
   --ff-headings: 'Poppins', sans-serif;

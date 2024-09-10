@@ -1,21 +1,71 @@
 .button {
-  font-family: 'Poppins', sans-serif;
+  position: relative;
+  font-family: var(--ff-headings);
   font-size: 1.125rem;
   font-weight: 500;
   padding: 1rem 2rem;
+  border: none;
   border-radius: 0.75rem;
-  background-color: var(--clr-dark);
+  background-color: transparent;
   color: var(--clr-white);
   cursor: pointer;
-  border: 1px solid var(--clr-dark);
-  transition:
-    background-color 250ms ease-in,
-    transform 250ms ease-in;
+  overflow: hidden;
+  transition: transform 250ms ease-in;
   outline-offset: 4px;
+}
+
+.button::before {
+  --clr-border: var(--clr-dark);
+  --clr-glow: var(--clr-white);
+
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: conic-gradient(
+    from var(--angle),
+    var(--clr-border) 0%,
+    var(--clr-glow) 5%,
+    var(--clr-border) 10%
+  );
+  animation: animateGradient 3s linear infinite;
+  z-index: var(--z-index-background);
+}
+
+.button::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: var(--clr-dark);
+  inset: 0.125rem;
+  border-radius: inherit;
+  z-index: var(--z-index-background);
+  transition: background-color 300ms ease;
 }
 
 .button:hover {
   transform: scale(0.95);
-  background-color: var(--clr-white);
-  color: var(--clr-dark);
+}
+
+.button:hover::before {
+  --clr-border: var(--clr-dark-gray);
+  /* background-color: var(--clr-white); */
+}
+
+.button:hover::after {
+  background-color: var(--clr-dark-gray);
+}
+
+@property --angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes animateGradient {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
 }

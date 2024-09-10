@@ -11,7 +11,8 @@
 
 .projectImage {
   /* width: 100%; */
-  
+  min-width: 100%;
+  min-height: 100%;
   background-size: cover;
   transition: transform 500ms ease-in-out;
 }

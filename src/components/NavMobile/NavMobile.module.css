@@ -29,6 +29,12 @@
 
 .navItem {
   padding: 1rem;
+  opacity: 0;
+  transform: translateX(100px);
+  transition:
+    transform 250ms ease-in,
+    opacity 250ms ease-in;
+  transition-delay: calc(var(--anim-duration) + var(--index) * 100ms);
 }
 
 .navList:hover ~ .gradientBackground {
@@ -37,6 +43,7 @@
 
 .sidebar {
   --width: min(20rem, 100%);
+  --anim-duration: 300ms;
 
   position: fixed;
   flex-direction: column;
@@ -45,14 +52,20 @@
   top: 0;
   bottom: 0;
   overflow-y: auto;
+  overflow-x: hidden;
   right: calc(-1 * var(--width));
   text-align: start;
   width: var(--width);
-  transition: 300ms ease-in-out;
+  transition: right var(--anim-duration) ease-in-out;
 }
 
 .sidebar.active {
   right: 0;
+}
+
+.sidebar.active .navItem {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .sidebar li {

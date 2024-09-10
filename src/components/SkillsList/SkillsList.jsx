@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import SectionHeader from '../SectionHeader/SectionHeader';
 import Tooltip from '../Tooltip/Tooltip';
 import skills from '../../data/skillsList';
 import styles from './SkillsList.module.css';
+import fadeIn from '../../utils/fadeIn';
 
 function SkillsList() {
   const [hoveredType, setHoveredType] = useState(null);
@@ -13,7 +15,13 @@ function SkillsList() {
         <SectionHeader heading="Skills" subheading="What I'm good at." />
 
         <div className={styles.contentWrapper}>
-          <div className={styles.details}>
+          <motion.div
+            variants={fadeIn('up', 0.6)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+            className={styles.details}
+          >
             <p className={styles.description}>
               I enjoy working with JavaScript, CSS, and HTML to create simple
               but engaging and user-friendly websites. With React, I build
@@ -29,8 +37,14 @@ function SkillsList() {
               curiosity drives me to learn and explore new tools and techniques,
               making me adaptable and eager to tackle new challenges.
             </p>
-          </div>
-          <div className={styles.skillsDisplay}>
+          </motion.div>
+          <motion.div
+            variants={fadeIn('up', 0.8)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+            className={styles.skillsDisplay}
+          >
             <ul
               className={`${styles.list} ${hoveredType ? styles.listHovered : ''}`}
             >
@@ -51,7 +65,7 @@ function SkillsList() {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

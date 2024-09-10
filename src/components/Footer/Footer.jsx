@@ -1,8 +1,10 @@
+import { motion } from 'framer-motion';
 import { FaLinkedinIn, FaEnvelope } from 'react-icons/fa';
 import { RiGithubLine } from 'react-icons/ri';
 import { IoHeart } from 'react-icons/io5';
 import SectionHeader from '../SectionHeader/SectionHeader';
 import SocialMediaButton from '../SocialMediaButton/SocialMediaButton';
+import fadeIn from '../../utils/fadeIn';
 import styles from './Footer.module.css';
 
 function Footer() {
@@ -16,15 +18,33 @@ function Footer() {
           subheading="Say hello."
           darkVariant={true}
         />
-        <p className={styles.description}>
+        <motion.p
+          variants={fadeIn('up', 0.4)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+          className={styles.description}
+        >
           Feel free to contact me if you have any questions or want to connect.
-        </p>
-        <div className={styles.contactInfo}>
+        </motion.p>
+        <motion.div
+          variants={fadeIn('up', 0.8)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+          className={styles.contactInfo}
+        >
           <a href={`mailto:${emailAddress}`} className={styles.email}>
             <FaEnvelope className={styles.emailIcon} />
             {emailAddress}
           </a>
-          <div className={styles.socials}>
+          <motion.div
+            variants={fadeIn('up', 1)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+            className={styles.socials}
+          >
             <SocialMediaButton
               Icon={FaLinkedinIn}
               text="@carloszamora14"
@@ -37,8 +57,8 @@ function Footer() {
               url="https://github.com/carloszamora14"
               label="Visit my GitHub profile"
             />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       <div className={styles.bottomBanner}>

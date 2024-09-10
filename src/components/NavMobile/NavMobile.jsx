@@ -47,6 +47,7 @@ function NavMobile() {
                   key={link.name}
                   className={styles.navItem}
                   data-index={index}
+                  style={{ '--index': index }}
                   onMouseOver={handleMouseOver}
                 >
                   <a

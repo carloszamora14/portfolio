@@ -1,15 +1,33 @@
+import { motion } from 'framer-motion';
 import ProjectCard from '../ProjectCard/ProjectCard';
 import SectionHeader from '../SectionHeader/SectionHeader';
+import projects from '../../data/projects';
 import styles from './Projects.module.css';
-import Lumina from '../../assets/lumina/login.jpeg';
-import DailyUiChallenge from '../../assets/daily-ui-challenge/cover.png';
-import Emoiq from '../../assets/emoiq/cover.png';
-import OhMyDeer from '../../assets/oh-my-deer/2.png';
-import NumberGuessingGame from '../../assets/number-guessing-game/cover.png';
-import DonaBikes from '../../assets/dona-bikes/cover.jpg';
-import MovieFinder from '../../assets/movie-finder/cover.png';
+import fadeIn from '../../utils/fadeIn';
 
 function Projects() {
+  const staggerContainer = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delay: 0.6,
+      },
+    },
+  };
+
+  const staggerChild = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+      },
+    },
+  };
+
   return (
     <section id="projects" className={styles.section}>
       <div className="container">
@@ -17,63 +35,41 @@ function Projects() {
           heading="Projects"
           subheading="A glimpse into what I've built."
         />
-        <p className={styles.description}>
+        <motion.p
+          variants={fadeIn('up', 0.6)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+          className={styles.description}
+        >
           Here you&apos;ll find a selection of projects I&apos;ve worked on,
           from high-fidelity prototypes to web apps. These showcase the skills
           I&apos;ve acquired and my dedication to learning and improving with
           every challenge.
-        </p>
-        <div className={styles.content}>
-          <ProjectCard
-            img={Lumina}
-            imgAlt="Mobile application Lumina home screen"
-            projectName="Lumina"
-            tagline="Be safe"
-            description="A project with social benefit"
-          />
-          <ProjectCard
-            img={DailyUiChallenge}
-            imgAlt="Mobile application Lumina home screen"
-            projectName="Daily UI Challenge"
-            tagline="Be safe"
-            description="A project with social benefit"
-          />
-          <ProjectCard
-            img={Emoiq}
-            imgAlt="Mobile application Lumina home screen"
-            projectName="EmoIQ"
-            tagline="Be safe"
-            description="A project with social benefit"
-          />
-          <ProjectCard
-            img={OhMyDeer}
-            imgAlt="Mobile application Lumina home screen"
-            projectName="Oh My Deer"
-            tagline="Be safe"
-            description="A project with social benefit"
-          />
-          <ProjectCard
-            img={NumberGuessingGame}
-            imgAlt="Mobile application Lumina home screen"
-            projectName="Number guessing game"
-            tagline="Be safe"
-            description="A project with social benefit"
-          />
-          <ProjectCard
-            img={DonaBikes}
-            imgAlt="Mobile application Lumina home screen"
-            projectName="Dona Bikes"
-            tagline="Be safe"
-            description="A project with social benefit"
-          />
-          <ProjectCard
-            img={MovieFinder}
-            imgAlt="Mobile application Lumina home screen"
-            projectName="Movie Finder"
-            tagline="Be safe"
-            description="A project with social benefit"
-          />
-        </div>
+        </motion.p>
+        <motion.div
+          className={styles.content}
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              variants={staggerChild}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <ProjectCard
+                img={project.img}
+                imgAlt={project.imgAlt}
+                projectName={project.projectName}
+                tagline={project.tagline}
+                description={project.description}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

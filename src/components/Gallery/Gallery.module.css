@@ -1,0 +1,92 @@
+.gallery {
+  width: 100%;
+  margin: 4rem 0;
+  overflow: hidden;
+}
+
+.content {
+  --padding: 1rem;
+  --gap: 3rem;
+
+  padding: 0 var(--padding);
+  width: 100%;
+  transform: translateX(calc(-100% - var(--padding)));
+}
+
+.imagesWrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  transition: opacity 200ms ease;
+}
+
+.gallery:hover .content {
+  animation-play-state: paused;
+}
+
+.gallery:hover .image {
+  opacity: 0.95;
+}
+
+.gallery .image:hover {
+  opacity: 1;
+}
+
+@keyframes slideMobile {
+  from {
+    transform: translateX(calc(-100% - var(--padding)));
+  }
+
+  to {
+    transform: translateX(
+      calc((var(--quantity) + 1) * (100% + var(--padding)) * -1)
+    );
+  }
+}
+
+@keyframes slideDesktop {
+  from {
+    transform: translateX(min(0px, calc(-60rem + 50%)));
+  }
+
+  to {
+    transform: translateX(
+      calc(
+        min(0px, calc(-60rem + 50%)) - (max(120rem, 100%) / 3 + var(--padding)) *
+          var(--quantity)
+      )
+    );
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .content {
+    padding: 0;
+    transform: translateX(min(0px, calc(-60rem + 50%)));
+  }
+
+  .imagesWrapper {
+    min-width: 120rem;
+  }
+
+  .image {
+    width: calc(100% / 3 - var(--gap) + var(--padding));
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .content {
+    animation: slideMobile 12s linear infinite 1s;
+  }
+}
+
+@media screen and (min-width: 48rem) and (prefers-reduced-motion: no-preference) {
+  .content {
+    animation: slideDesktop 12s linear infinite 1s;
+  }
+}

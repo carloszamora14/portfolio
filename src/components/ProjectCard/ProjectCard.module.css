@@ -1,4 +1,7 @@
 .projectCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   border: 1px solid #ddd;
   background-color: #fff;
   transition: box-shadow 250ms ease, transform 300ms ease-in-out;
@@ -20,6 +23,7 @@
 .projectDetails {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   padding: 0.5rem;
 }
 
@@ -36,12 +40,14 @@
 }
 
 .projectButton {
+  text-decoration: none;
   align-self: start;
   padding: 8px 16px;
   background-color: var(--clr-midnight-blue);
   background-color: var(--clr-dark);
   color: var(--clr-turquoise);
   color: pink;
+  margin-top: auto;
   /* color: var(--clr-lavender); */
   border: none;
   border-radius: 0.25rem;

@@ -64,8 +64,8 @@ function Projects() {
                 img={project.img}
                 imgAlt={project.imgAlt}
                 projectName={project.projectName}
-                tagline={project.tagline}
                 description={project.description}
+                url={project.url}
               />
             </motion.div>
           ))}

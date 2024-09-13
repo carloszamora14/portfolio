@@ -1,10 +1,14 @@
+import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function useActiveSection() {
   const [activeSection, setActiveSection] = useState('');
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
+      if (location.pathname !== '/') return;
+
       const sections = document.querySelectorAll('section[id], footer[id]');
       let lastSection;
 
@@ -22,13 +26,18 @@ function useActiveSection() {
       }
     };
 
-    handleScroll();
+    if (location.pathname !== '/') {
+      setActiveSection('');
+    } else {
+      handleScroll();
+    }
+
     window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [location]);
 
   return activeSection;
 }

@@ -1,8 +1,9 @@
+import { HashLink as Link } from 'react-router-hash-link';
 import styles from './Logo.module.css';
 
 function Logo() {
   return (
-    <a href="#home" aria-label="Home" className={styles.logo}>
+    <Link smooth to="/#home" aria-label="Home" className={styles.logo}>
       <div className={styles.iconWrapper} aria-hidden="true">
         {Array(3)
           .fill(null)
@@ -21,7 +22,7 @@ function Logo() {
           ))}
       </div>
       <span className={styles.logoText}>Cz</span>
-    </a>
+    </Link>
   );
 }
 

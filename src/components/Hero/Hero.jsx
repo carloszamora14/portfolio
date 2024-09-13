@@ -6,7 +6,7 @@ import styles from './Hero.module.css';
 
 function Hero() {
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} id="home">
       <div className="container" style={{ position: 'relative' }}>
         <div className={`${styles.content}`}>
           <motion.h1

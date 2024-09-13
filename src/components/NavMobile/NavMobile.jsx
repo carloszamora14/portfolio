@@ -1,16 +1,54 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
 import { RiMenu2Line } from 'react-icons/ri';
 import { IoCloseOutline } from 'react-icons/io5';
 import useFocusTrap from '../../hooks/useTrapFocus';
 import navigationLinks from '../../data/navigationLinks';
+import useScrollOffset from '../../hooks/useScrollOffset';
 import styles from './NavMobile.module.css';
 
-function NavMobile() {
-  const [isOpen, setIsOpen] = useState(false);
+function NavMobile({ activeSection }) {
   const navRef = useRef(null);
+  const sidebarRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const scrollOffset = useScrollOffset();
   const { firstElementRef, lastElementRef } = useFocusTrap(isOpen, () =>
     setIsOpen(false),
   );
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
+  useEffect(() => {
+    const sidebar = sidebarRef.current;
+    if (!sidebar) return;
+
+    const stopScrollPropagation = evt => {
+      const { scrollTop, scrollHeight, clientHeight } = sidebar;
+
+      if (
+        (evt.deltaY < 0 && scrollTop === 0) ||
+        (evt.deltaY > 0 && scrollTop + clientHeight === scrollHeight)
+      ) {
+        evt.preventDefault();
+      }
+    };
+
+    if (isOpen) {
+      sidebar.addEventListener('wheel', stopScrollPropagation, {
+        passive: false,
+      });
+      sidebar.addEventListener('touchmove', stopScrollPropagation, {
+        passive: false,
+      });
+    }
+
+    return () => {
+      sidebar.removeEventListener('wheel', stopScrollPropagation);
+      sidebar.removeEventListener('touchmove', stopScrollPropagation);
+    };
+  }, [isOpen]);
 
   const handleMouseOver = evt => {
     const index = evt.currentTarget.dataset['index'];
@@ -28,10 +66,13 @@ function NavMobile() {
         <RiMenu2Line />
       </button>
 
-      <aside className={`${styles.sidebar} ${isOpen ? styles.active : ''}`}>
+      <aside
+        className={`${styles.sidebar} ${isOpen ? styles.active : ''}`}
+        ref={sidebarRef}
+      >
         <div>
           <button
-            onClick={() => setIsOpen(false)}
+            onClick={handleClose}
             className={styles.closeButton}
             aria-label="Close menu"
             tabIndex={isOpen ? 0 : -1}
@@ -49,19 +90,22 @@ function NavMobile() {
                   data-index={index}
                   style={{ '--index': index }}
                   onMouseOver={handleMouseOver}
+                  onClick={handleClose}
                 >
-                  <a
-                    href={link.url}
-                    className={styles.itemLink}
+                  <Link
+                    smooth
+                    to={link.url}
+                    className={`${styles.itemLink} ${activeSection === link.url.substring(2) ? styles.active : ''}`}
                     tabIndex={isOpen ? 0 : -1}
                     ref={
                       index === navigationLinks.length - 1
                         ? lastElementRef
                         : null
                     }
+                    scroll={scrollOffset}
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

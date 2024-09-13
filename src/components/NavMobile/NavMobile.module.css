@@ -81,6 +81,10 @@
   text-decoration: none;
 }
 
+.itemLink.active {
+  text-decoration: underline;
+}
+
 .nav:hover .itemLink {
   opacity: 0.5;
 }

@@ -29,6 +29,14 @@
   color: var(--clr-midnight-blue);
 }
 
+.navLink.active {
+  color: var(--clr-midnight-blue);
+}
+
+.navLink.active::before {
+  transform: scaleX(1);
+}
+
 @media (hover: hover) and (pointer: fine) {
   .navLink:hover {
     color: var(--clr-midnight-blue);

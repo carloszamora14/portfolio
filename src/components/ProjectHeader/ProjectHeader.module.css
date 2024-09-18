@@ -1,0 +1,18 @@
+.header {
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.heading {
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xl);
+  color: var(--clr-midnight-blue);
+}
+
+.subheading {
+  font-family: var(--ff-text);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-xs);
+  color: var(--clr-dark-gray);
+}

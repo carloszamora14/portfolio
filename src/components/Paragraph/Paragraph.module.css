@@ -1,0 +1,31 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.title {
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-lg);
+  color: var(--clr-midnight-blue);
+}
+
+@media screen and (min-width: 48rem) {
+  .wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .title {
+    min-width: 35%;
+    max-width: 35%;
+  }
+
+  .content {
+    flex-grow: 1;
+  }
+}

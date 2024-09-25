@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import AudioPlayerButton from '../AudioPlayerButton/AudioPlayerButton';
 import useActiveSection from '../../hooks/useActiveSection';
 
 function Layout() {
@@ -11,6 +12,7 @@ function Layout() {
       <Header activeSection={activeSection} />
       <Outlet />
       <Footer />
+      <AudioPlayerButton />
     </>
   );
 }

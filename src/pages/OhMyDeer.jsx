@@ -62,11 +62,12 @@ function OhMyDeer() {
         </p>
       </Paragraph>
       <div
+        className="container"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(24rem, 1fr))',
           gap: '1rem',
-          margin: '3rem 0',
+          margin: '3rem auto',
         }}
       >
         <img src={image7} alt="" />

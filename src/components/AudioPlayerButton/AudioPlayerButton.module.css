@@ -1,0 +1,75 @@
+.wrapper {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.button {
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: var(--clr-green);
+  cursor: pointer;
+  z-index: var(--z-index-overlay);
+  opacity: 0.5;
+  transition:
+    background-color 300ms ease-in-out,
+    transform 150ms ease-in-out,
+    opacity 300ms ease-in-out;
+}
+
+.button:hover {
+  opacity: 1;
+  transform: scale(0.95);
+}
+
+.button:focus-visible {
+  opacity: 1;
+}
+
+.button:active {
+  transform: scale(0.85);
+}
+
+.button.playing {
+  animation: changeBackground 4s linear infinite alternate;
+}
+
+.button.playing .note {
+  animation: dance 2s linear infinite;
+}
+
+.button.playing .musicNote {
+  animation: spinPulse 2s infinite linear;
+}
+
+@keyframes spinPulse {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(10deg) scale(1.05);
+  }
+  50% {
+    transform: rotate(0deg) scale(1.1);
+  }
+  75% {
+    transform: rotate(-10deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes changeBackground {
+  0% {
+    background-color: var(--clr-green);
+  }
+  50% {
+    background-color: var(--clr-yellow);
+  }
+  100% {
+    background-color: var(--clr-turquoise);
+  }
+}

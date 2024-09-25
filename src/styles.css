@@ -2,7 +2,9 @@
   --clr-white: #fdfbfb;
   --clr-red: #ef4770;
   --clr-green: #0dd6c3;
+  --clr-teal: #15e2e2;
   --clr-turquoise: #34daef;
+  --clr-yellow: #c3ec50;
   --clr-purple: #ae75db;
   --clr-dark: #161615;
   --clr-lavender: #f3e4ff;
@@ -16,7 +18,6 @@
 
   --ff-headings: 'Poppins', sans-serif;
   --ff-text: 'Inter', sans-serif;
-  --ff-monospace: 'Courier New', Courier, monospace;
 
   --fs-xxl: 3rem;
   --fs-xl: 2rem;

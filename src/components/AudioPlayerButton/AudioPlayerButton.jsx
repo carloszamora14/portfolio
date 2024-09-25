@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import styles from './AudioPlayerButton.module.css';
 
 function AudioPlayerButton() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -14,21 +15,30 @@ function AudioPlayerButton() {
   };
 
   return (
-    <div style={{ position: 'fixed', bottom: '20px', right: '20px' }}>
+    <div className={styles.wrapper}>
       <button
         onClick={togglePlayPause}
         aria-pressed={isPlaying}
         aria-label={isPlaying ? 'Pause music' : 'Play music'}
-        style={{
-          padding: '10px 20px',
-          fontSize: '16px',
-          borderRadius: '5px',
-          backgroundColor: isPlaying ? '#d9534f' : '#5cb85c',
-          color: 'white',
-          cursor: 'pointer',
-        }}
+        className={`${styles.button} ${isPlaying ? styles.playing : ''}`}
       >
-        {isPlaying ? 'Pause' : 'Play'}
+        <span className="sr-only">{isPlaying ? 'Pause' : 'Play'}</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className={styles.musicNote}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          width="24"
+          height="24"
+        >
+          <path d="M9 18V5l12-2v13" />
+          <circle cx="6" cy="18" r="3" />
+          <circle cx="18" cy="16" r="3" />
+        </svg>
       </button>
 
       <audio ref={audioRef} src="/memories-of-school.mp3" loop />

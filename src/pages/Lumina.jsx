@@ -23,30 +23,26 @@ function Lumina() {
         <img src={mockups} alt="" style={{ width: '100%' }} />
       </div>
 
-      <section className="container">
-        <Paragraph title="What is Lumina">
-          <p style={{ fontSize: '1rem', lineHeight: '150%' }}>
-            A prototype of a mobile application aimed at preventing gender-based
-            violence through a panic button that allows users to report abuse
-            and dangerous situations in everyday life. Additionally, it provides
-            access to maps with color-coded zones, highlighting areas with
-            varying levels of risk. The app aims to identify high-risk areas and
-            promote greater physical and overall safety for women and girls.
-          </p>
-        </Paragraph>
-        <Paragraph title="Purpose">
-          <p
-            style={{ marginTop: '1rem', fontSize: '1rem', lineHeight: '150%' }}
-          >
-            We care about the mental and physical well-being of all Mexican
-            women and girls. They all deserve to live in peace, security, and
-            fulfillment. Our app is a tool to break the chains of violence
-            imposed on women by society through a tool that provides immediate
-            help and risk-level mapping.
-          </p>
-        </Paragraph>
-        <Paragraph title="Development process" />
-
+      <Paragraph title="What is Lumina">
+        <p style={{ fontSize: '1rem', lineHeight: '150%' }}>
+          A prototype of a mobile application aimed at preventing gender-based
+          violence through a panic button that allows users to report abuse and
+          dangerous situations in everyday life. Additionally, it provides
+          access to maps with color-coded zones, highlighting areas with varying
+          levels of risk. The app aims to identify high-risk areas and promote
+          greater physical and overall safety for women and girls.
+        </p>
+      </Paragraph>
+      <Paragraph title="Purpose">
+        <p style={{ marginTop: '1rem', fontSize: '1rem', lineHeight: '150%' }}>
+          We care about the mental and physical well-being of all Mexican women
+          and girls. They all deserve to live in peace, security, and
+          fulfillment. Our app is a tool to break the chains of violence imposed
+          on women by society through a tool that provides immediate help and
+          risk-level mapping.
+        </p>
+      </Paragraph>
+      <Paragraph title="Development process" orientation="col">
         <p
           style={{
             marginTop: '1rem',
@@ -73,35 +69,36 @@ function Lumina() {
           alt="Trello board with showing the different tasks in each sprint backlog"
           style={{ width: '100%', marginTop: '2rem' }}
         />
-        <Paragraph title="My contribution">
-          <p
-            style={{
-              fontSize: '1rem',
-              lineHeight: '150%',
-            }}
-          >
-            In our team, everyone participated in defining the functional and
-            non-functional requirements, creating the product backlog and sprint
-            backlog, and deciding on user interface elements, color palette, and
-            early mockups.
-          </p>
-          <p
-            style={{
-              fontSize: '1rem',
-              lineHeight: '150%',
-              marginTop: '1rem',
-            }}
-          >
-            I specifically focused on the signup process, which involved several
-            steps for users to complete before using the app. First, users fill
-            out a form with their name, CURP, birthdate, and password. Then,
-            they provide medical information, such as allergies and blood type,
-            and add trusted contacts who will be notified if they find
-            themselves in a dangerous situation. Additionally, I was responsible
-            for the profile screen, where users can edit their information.
-          </p>
-        </Paragraph>
-        <Paragraph title="Style guide" />
+      </Paragraph>
+      <Paragraph title="My contribution">
+        <p
+          style={{
+            fontSize: '1rem',
+            lineHeight: '150%',
+          }}
+        >
+          In our team, everyone participated in defining the functional and
+          non-functional requirements, creating the product backlog and sprint
+          backlog, and deciding on user interface elements, color palette, and
+          early mockups.
+        </p>
+        <p
+          style={{
+            fontSize: '1rem',
+            lineHeight: '150%',
+            marginTop: '1rem',
+          }}
+        >
+          I specifically focused on the signup process, which involved several
+          steps for users to complete before using the app. First, users fill
+          out a form with their name, CURP, birthdate, and password. Then, they
+          provide medical information, such as allergies and blood type, and add
+          trusted contacts who will be notified if they find themselves in a
+          dangerous situation. Additionally, I was responsible for the profile
+          screen, where users can edit their information.
+        </p>
+      </Paragraph>
+      <Paragraph title="Style guide" orientation="col">
         <p
           style={{
             fontSize: '1rem',
@@ -122,7 +119,7 @@ function Lumina() {
           alt="Fonts and color palette used in the Lumina prototype"
           style={{ width: '100%', margin: '2rem 0 3rem' }}
         />
-      </section>
+      </Paragraph>
     </main>
   );
 }

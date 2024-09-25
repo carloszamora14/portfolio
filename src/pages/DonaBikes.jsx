@@ -24,19 +24,17 @@ function DonaBikes() {
         <img src={mockup} alt="" style={{ width: '100%' }} />
       </div>
 
-      <section className="container">
-        <Paragraph title="Project brief">
-          <p style={{ fontSize: '1rem', lineHeight: '150%' }}>
-            Our project, Dona Bikes, is centered on selling high-quality
-            bicycles. The ideal customer is Dimitri, a man in his mid-40s who
-            lives with friends in Mexico. He is a high school graduate and works
-            as part of a small team. Although Dimitri has never purchased a
-            product like ours before, he is passionate about productivity and
-            efficiency, making him receptive to solutions that enhance his daily
-            life.
-          </p>
-        </Paragraph>
-        <Paragraph title="Task flow" />
+      <Paragraph title="Project brief">
+        <p style={{ fontSize: '1rem', lineHeight: '150%' }}>
+          Our project, Dona Bikes, is centered on selling high-quality bicycles.
+          The ideal customer is Dimitri, a man in his mid-40s who lives with
+          friends in Mexico. He is a high school graduate and works as part of a
+          small team. Although Dimitri has never purchased a product like ours
+          before, he is passionate about productivity and efficiency, making him
+          receptive to solutions that enhance his daily life.
+        </p>
+      </Paragraph>
+      <Paragraph title="Task flow" orientation="col">
         <p style={{ marginTop: '1rem', fontSize: '1rem', lineHeight: '1.5' }}>
           The goal of this project was to design a purchase flow for an
           e-commerce mobile app focused on bike sales. The task flow encompasses
@@ -57,14 +55,15 @@ function DonaBikes() {
             alt="Four step task flow: Homepage, product features, checkout, and corfirmation"
           />
         </div>
-
-        <Paragraph title="Low fidelity prototype" />
+      </Paragraph>
+      <Paragraph title="Low fidelity prototype" orientation="col">
         <img
           style={{ width: '100%', marginTop: '2rem' }}
           src={lofi}
           alt="Font and colors used in the EmoIQ application"
         />
-        <Paragraph title="Style guide" />
+      </Paragraph>
+      <Paragraph title="Style guide" orientation="col">
         <p
           style={{
             fontSize: '1rem',
@@ -87,7 +86,8 @@ function DonaBikes() {
           src={styleGuide}
           alt="Font and colors used in the EmoIQ application"
         />
-        <Paragraph title="High fidelity prototype" />
+      </Paragraph>
+      <Paragraph title="High fidelity prototype" orientation="col">
         <p
           style={{
             fontSize: '1rem',
@@ -110,11 +110,11 @@ function DonaBikes() {
             marginBottom: '3rem',
           }}
         >
-          The images are selected to align with my persona&apos;s needs, reflecting
-          their focus on efficiency and productivity, and are supported by text
-          that highlights key information.
+          The images are selected to align with my persona&apos;s needs,
+          reflecting their focus on efficiency and productivity, and are
+          supported by text that highlights key information.
         </p>
-      </section>
+      </Paragraph>
     </main>
   );
 }

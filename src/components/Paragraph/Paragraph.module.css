@@ -1,8 +1,7 @@
-.wrapper {
+section.wrapper {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 100%;
   margin-top: 2rem;
 }
 
@@ -14,18 +13,18 @@
 }
 
 @media screen and (min-width: 48rem) {
-  .wrapper {
+  .wrapper.row {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
   }
 
-  .title {
+  .wrapper.row .title {
     min-width: 35%;
     max-width: 35%;
   }
 
-  .content {
+  .wrapper.row .content {
     flex-grow: 1;
   }
 }

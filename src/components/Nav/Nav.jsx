@@ -2,9 +2,11 @@ import { HashLink as Link } from 'react-router-hash-link';
 import navigationLinks from '../../data/navigationLinks';
 import styles from './Nav.module.css';
 import useScrollOffset from '../../hooks/useScrollOffset';
+import useActiveSectionContext from '../../hooks/useActiveSectionContext';
 
-function Nav({ activeSection }) {
+function Nav() {
   const scrollOffset = useScrollOffset();
+  const activeSection = useActiveSectionContext();
 
   return (
     <nav aria-label="Main navigation">
@@ -14,7 +16,7 @@ function Nav({ activeSection }) {
             <Link
               smooth
               to={link.url}
-              className={`${styles.navLink} ${activeSection === link.url.substring(2) ? styles.active : ''}`}
+              className={`${styles.navLink} ${activeSection === link.id ? styles.active : ''}`}
               scroll={scrollOffset}
             >
               {link.name}

@@ -1,8 +1,10 @@
+import { createContext, useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 
-function useActiveSection() {
-  const [activeSection, setActiveSection] = useState('');
+export const ActiveSectionContext = createContext(undefined);
+
+function ActiveSectionProvider({ children }) {
+  const [activeSection, setActiveSection] = useState(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -17,7 +19,6 @@ function useActiveSection() {
         if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
           setActiveSection(section.id);
         }
-
         lastSection = section;
       });
 
@@ -27,7 +28,7 @@ function useActiveSection() {
     };
 
     if (location.pathname !== '/') {
-      setActiveSection('');
+      setActiveSection(null);
     } else {
       handleScroll();
     }
@@ -39,7 +40,11 @@ function useActiveSection() {
     };
   }, [location]);
 
-  return activeSection;
+  return (
+    <ActiveSectionContext.Provider value={activeSection}>
+      {children}
+    </ActiveSectionContext.Provider>
+  );
 }
 
-export default useActiveSection;
+export default ActiveSectionProvider;

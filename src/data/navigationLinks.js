@@ -1,9 +1,9 @@
 const navigationLinks = [
-  { url: '/#home', name: 'Home' },
-  { url: '/#projects', name: 'Projects' },
-  { url: '/#about', name: 'About me' },
-  { url: '/#skills', name: 'Skills' },
-  { url: '/#contact', name: 'Contact' },
+  { id: 'home', url: '/#home', name: 'Home' },
+  { id: 'projects', url: '/#projects', name: 'Projects' },
+  { id: 'about', url: '/#about', name: 'About me' },
+  { id: 'skills', url: '/#skills', name: 'Skills' },
+  { id: 'contact', url: '/#contact', name: 'Contact' },
 ];
 
 export default navigationLinks;

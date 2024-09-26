@@ -4,7 +4,7 @@ import Nav from '../Nav/Nav';
 import NavMobile from '../NavMobile/NavMobile';
 import styles from './Header.module.css';
 
-function Header({ activeSection }) {
+function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -29,8 +29,8 @@ function Header({ activeSection }) {
     >
       <div className={`${styles.headerWrapper} container`}>
         <Logo />
-        <Nav activeSection={activeSection} />
-        <NavMobile activeSection={activeSection} />
+        <Nav />
+        <NavMobile />
       </div>
     </header>
   );

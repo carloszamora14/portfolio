@@ -1,17 +1,18 @@
 import { Outlet } from 'react-router-dom';
+import ActiveSectionProvider from '../../context/ActiveSectionContext';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import AudioPlayerButton from '../AudioPlayerButton/AudioPlayerButton';
-import useActiveSection from '../../hooks/useActiveSection';
 import useScrollToTop from '../../hooks/useScrollToTop';
 
 function Layout() {
-  const activeSection = useActiveSection();
   useScrollToTop();
 
   return (
     <>
-      <Header activeSection={activeSection} />
+      <ActiveSectionProvider>
+        <Header />
+      </ActiveSectionProvider>
       <Outlet />
       <Footer />
       <AudioPlayerButton />

@@ -3,6 +3,7 @@
   font-family: var(--ff-headings);
   font-size: 1.125rem;
   font-weight: 500;
+  text-decoration: none;
   padding: 1rem 2rem;
   border: none;
   border-radius: 0.75rem;
@@ -27,16 +28,17 @@
     var(--clr-glow) 5%,
     var(--clr-border) 10%
   );
+  border-radius: inherit;
   animation: animateGradient 3s linear infinite;
   z-index: var(--z-index-background);
 }
 
 .button::after {
   content: '';
-  display: block;
   position: absolute;
-  background-color: var(--clr-dark);
+  display: block;
   inset: 0.125rem;
+  background-color: var(--clr-dark);
   border-radius: inherit;
   z-index: var(--z-index-background);
   transition: background-color 300ms ease;

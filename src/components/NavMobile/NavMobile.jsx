@@ -3,15 +3,17 @@ import { HashLink as Link } from 'react-router-hash-link';
 import { RiMenu2Line } from 'react-icons/ri';
 import { IoCloseOutline } from 'react-icons/io5';
 import useFocusTrap from '../../hooks/useTrapFocus';
-import navigationLinks from '../../data/navigationLinks';
 import useScrollOffset from '../../hooks/useScrollOffset';
+import useActiveSectionContext from '../../hooks/useActiveSectionContext';
+import navigationLinks from '../../data/navigationLinks';
 import styles from './NavMobile.module.css';
 
-function NavMobile({ activeSection }) {
+function NavMobile() {
   const navRef = useRef(null);
   const sidebarRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const scrollOffset = useScrollOffset();
+  const activeSection = useActiveSectionContext;
   const { firstElementRef, lastElementRef } = useFocusTrap(isOpen, () =>
     setIsOpen(false),
   );
@@ -95,7 +97,7 @@ function NavMobile({ activeSection }) {
                   <Link
                     smooth
                     to={link.url}
-                    className={`${styles.itemLink} ${activeSection === link.url.substring(2) ? styles.active : ''}`}
+                    className={`${styles.itemLink} ${activeSection === link.id ? styles.active : ''}`}
                     tabIndex={isOpen ? 0 : -1}
                     ref={
                       index === navigationLinks.length - 1

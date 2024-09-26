@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react';
 import Logo from '../Logo/Logo';
 import Nav from '../Nav/Nav';
 import NavMobile from '../NavMobile/NavMobile';
+import useHeaderRefContext from '../../hooks/useHeaderRefContext';
 import styles from './Header.module.css';
 
 function Header() {
+  const headerRef = useHeaderRefContext();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -25,7 +27,8 @@ function Header() {
 
   return (
     <header
-      className={`${styles.header} ${scrolled ? styles.scrolled : ''} pageNavbar`}
+      ref={headerRef}
+      className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}
     >
       <div className={`${styles.headerWrapper} container`}>
         <Logo />

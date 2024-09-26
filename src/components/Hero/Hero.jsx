@@ -1,10 +1,15 @@
 import { motion } from 'framer-motion';
 import Button from '../Button/Button';
 import Star from '../Star/Star';
+import useHeaderRefContext from '../../hooks/useHeaderRefContext';
+import useScrollOffset from '../../hooks/useScrollOffset';
 import fadeIn from '../../utils/fadeIn';
 import styles from './Hero.module.css';
 
 function Hero() {
+  const headerRef = useHeaderRefContext();
+  const scrollOffset = useScrollOffset();
+
   return (
     <section className={styles.hero} id="home">
       <div className="container" style={{ position: 'relative' }}>
@@ -37,7 +42,12 @@ function Hero() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <Button className={styles.button}>See my projects</Button>
+            <Button
+              to="/#projects"
+              scrollOffset={el => scrollOffset(el, headerRef)}
+            >
+              See my projects
+            </Button>
           </motion.div>
         </div>
 

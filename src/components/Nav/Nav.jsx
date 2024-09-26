@@ -3,8 +3,10 @@ import navigationLinks from '../../data/navigationLinks';
 import styles from './Nav.module.css';
 import useScrollOffset from '../../hooks/useScrollOffset';
 import useActiveSectionContext from '../../hooks/useActiveSectionContext';
+import useHeaderRefContext from '../../hooks/useHeaderRefContext';
 
 function Nav() {
+  const headerRef = useHeaderRefContext();
   const scrollOffset = useScrollOffset();
   const activeSection = useActiveSectionContext();
 
@@ -17,7 +19,7 @@ function Nav() {
               smooth
               to={link.url}
               className={`${styles.navLink} ${activeSection === link.id ? styles.active : ''}`}
-              scroll={scrollOffset}
+              scroll={el => scrollOffset(el, headerRef)}
             >
               {link.name}
             </Link>

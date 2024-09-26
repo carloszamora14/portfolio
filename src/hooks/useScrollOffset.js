@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 
 function useScrollOffset() {
-  return useCallback(el => {
-    const navbar = document.querySelector('.pageNavbar');
+  return useCallback((el, headerRef) => {
+    const navbar = headerRef.current;
     const navbarHeight = navbar ? navbar.offsetHeight : 0;
 
     const elementPosition = el.getBoundingClientRect().top + window.scrollY;

@@ -7,13 +7,15 @@ import useScrollOffset from '../../hooks/useScrollOffset';
 import useActiveSectionContext from '../../hooks/useActiveSectionContext';
 import navigationLinks from '../../data/navigationLinks';
 import styles from './NavMobile.module.css';
+import useHeaderRefContext from '../../hooks/useHeaderRefContext';
 
 function NavMobile() {
   const navRef = useRef(null);
   const sidebarRef = useRef(null);
+  const headerRef = useHeaderRefContext();
+  const activeSection = useActiveSectionContext();
   const [isOpen, setIsOpen] = useState(false);
   const scrollOffset = useScrollOffset();
-  const activeSection = useActiveSectionContext;
   const { firstElementRef, lastElementRef } = useFocusTrap(isOpen, () =>
     setIsOpen(false),
   );
@@ -104,7 +106,7 @@ function NavMobile() {
                         ? lastElementRef
                         : null
                     }
-                    scroll={scrollOffset}
+                    scroll={el => scrollOffset(el, headerRef)}
                   >
                     {link.name}
                   </Link>

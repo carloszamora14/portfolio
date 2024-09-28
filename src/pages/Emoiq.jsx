@@ -1,10 +1,10 @@
 import ProjectHeader from '../components/ProjectHeader/ProjectHeader';
 import Paragraph from '../components/Paragraph/Paragraph';
-import img from '../assets/emoiq/mockup.png';
-import sitemap from '../assets/emoiq/sitemap.png';
-import styleGuide from '../assets/emoiq/style-guide.png';
+import projects from '../data/projects';
 
 function Emoiq() {
+  const projectData = projects.find(project => project.projectName === 'EmoIQ');
+
   return (
     <main>
       <ProjectHeader
@@ -20,7 +20,11 @@ function Emoiq() {
           justifyContent: 'center',
         }}
       >
-        <img src={img} alt="" style={{ width: '45%', maxWidth: '30rem' }} />
+        <img
+          src={projectData.images.mockups.src}
+          alt={projectData.images.mockups.alt}
+          style={{ width: '45%', maxWidth: '30rem' }}
+        />
       </div>
 
       <Paragraph title="Problem">
@@ -99,8 +103,8 @@ function Emoiq() {
         </p>
         <img
           style={{ width: '100%' }}
-          src={sitemap}
-          alt="Tree hierarchy showing the different sections of the app divided into three categories: Home, Thoughts, and Emotional Competencies"
+          src={projectData.images.sitemap.src}
+          alt={projectData.images.sitemap.alt}
         />
       </Paragraph>
       <Paragraph title="Style guide" orientation="col">
@@ -120,8 +124,8 @@ function Emoiq() {
         </p>
         <img
           style={{ width: '100%', margin: '2rem 0 3rem' }}
-          src={styleGuide}
-          alt="Font and colors used in the EmoIQ application"
+          src={projectData.images.styleGuide.src}
+          alt={projectData.images.styleGuide.alt}
         />
       </Paragraph>
     </main>

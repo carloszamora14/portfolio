@@ -1,11 +1,12 @@
 import ProjectHeader from '../components/ProjectHeader/ProjectHeader';
 import Paragraph from '../components/Paragraph/Paragraph';
-import styleGuide from '../assets/dona-bikes/style-guide.png';
-import taskFlow from '../assets/dona-bikes/task-flow.png';
-import lofi from '../assets/dona-bikes/lofi.png';
-import mockup from '../assets/dona-bikes/mockup.png';
+import projects from '../data/projects';
 
 function DonaBikes() {
+  const projectData = projects.find(
+    project => project.projectName === 'Dona Bikes',
+  );
+
   return (
     <main>
       <ProjectHeader
@@ -21,7 +22,11 @@ function DonaBikes() {
           justifyContent: 'center',
         }}
       >
-        <img src={mockup} alt="" style={{ width: '100%' }} />
+        <img
+          src={projectData.images.mockup.src}
+          alt={projectData.images.mockup.alt}
+          style={{ width: '100%' }}
+        />
       </div>
 
       <Paragraph title="Project brief">
@@ -51,16 +56,16 @@ function DonaBikes() {
         >
           <img
             style={{ width: '100%', maxWidth: '60rem' }}
-            src={taskFlow}
-            alt="Four step task flow: Homepage, product features, checkout, and corfirmation"
+            src={projectData.images.taskFlow.src}
+            alt={projectData.images.taskFlow.alt}
           />
         </div>
       </Paragraph>
       <Paragraph title="Low fidelity prototype" orientation="col">
         <img
           style={{ width: '100%', marginTop: '2rem' }}
-          src={lofi}
-          alt="Font and colors used in the EmoIQ application"
+          src={projectData.images.lofi.src}
+          alt={projectData.images.lofi.alt}
         />
       </Paragraph>
       <Paragraph title="Style guide" orientation="col">
@@ -83,8 +88,8 @@ function DonaBikes() {
         </p>
         <img
           style={{ width: '100%', marginTop: '2rem' }}
-          src={styleGuide}
-          alt="Font and colors used in the EmoIQ application"
+          src={projectData.images.styleGuide.src}
+          alt={projectData.images.styleGuide.alt}
         />
       </Paragraph>
       <Paragraph title="High fidelity prototype" orientation="col">

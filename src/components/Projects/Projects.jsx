@@ -61,8 +61,8 @@ function Projects() {
               viewport={{ once: true, amount: 0.2 }}
             >
               <ProjectCard
-                img={project.img}
-                imgAlt={project.imgAlt}
+                img={project.images.cover.src}
+                imgAlt={project.images.cover.alt}
                 projectName={project.projectName}
                 description={project.description}
                 url={project.url}

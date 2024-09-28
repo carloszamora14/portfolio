@@ -1,9 +1,12 @@
 import ProjectHeader from '../components/ProjectHeader/ProjectHeader';
 import Paragraph from '../components/Paragraph/Paragraph';
-import showcase from '../assets/daily-ui-challenge/showcase.png';
-import website from '../assets/daily-ui-challenge/website.png';
+import projects from '../data/projects';
 
 function DailyUIChallenge() {
+  const projectData = projects.find(
+    project => project.projectName === 'Daily UI Challenge',
+  );
+
   return (
     <main>
       <ProjectHeader
@@ -19,7 +22,11 @@ function DailyUIChallenge() {
           justifyContent: 'center',
         }}
       >
-        <img src={website} alt="" style={{ width: '100%' }} />
+        <img
+          src={projectData.images.website.src}
+          alt={projectData.images.website.alt}
+          style={{ width: '100%' }}
+        />
       </div>
 
       <Paragraph title="About">
@@ -51,8 +58,8 @@ function DailyUIChallenge() {
         </p>
         <img
           style={{ width: '100%', margin: '2rem 0 3rem' }}
-          src={showcase}
-          alt="Collection of many mobile ui interfaces divided in four columns"
+          src={projectData.images.showcase.src}
+          alt={projectData.images.showcase.alt}
         />
       </Paragraph>
     </main>

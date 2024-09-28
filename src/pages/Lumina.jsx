@@ -1,10 +1,12 @@
 import ProjectHeader from '../components/ProjectHeader/ProjectHeader';
 import Paragraph from '../components/Paragraph/Paragraph';
-import mockups from '../assets/lumina/mockups.png';
-import sprintBacklog from '../assets/lumina/sprint-backlog.png';
-import styleGuide from '../assets/lumina/style-guide.png';
+import projects from '../data/projects';
 
 function Lumina() {
+  const projectData = projects.find(
+    project => project.projectName === 'Lumina',
+  );
+
   return (
     <main>
       <ProjectHeader
@@ -20,7 +22,11 @@ function Lumina() {
           justifyContent: 'center',
         }}
       >
-        <img src={mockups} alt="" style={{ width: '100%' }} />
+        <img
+          src={projectData.images.mockups.src}
+          alt={projectData.images.mockups.alt}
+          style={{ width: '100%' }}
+        />
       </div>
 
       <Paragraph title="What is Lumina">
@@ -65,8 +71,8 @@ function Lumina() {
           both my team and me, I am proud of what we accomplished.
         </p>
         <img
-          src={sprintBacklog}
-          alt="Trello board with showing the different tasks in each sprint backlog"
+          src={projectData.images.sprintBacklog.src}
+          alt={projectData.images.sprintBacklog.alt}
           style={{ width: '100%', marginTop: '2rem' }}
         />
       </Paragraph>
@@ -115,8 +121,8 @@ function Lumina() {
           ensure the app remains easy to navigate and user-friendly.
         </p>
         <img
-          src={styleGuide}
-          alt="Fonts and color palette used in the Lumina prototype"
+          src={projectData.images.styleGuide.src}
+          alt={projectData.images.styleGuide.alt}
           style={{ width: '100%', margin: '2rem 0 3rem' }}
         />
       </Paragraph>

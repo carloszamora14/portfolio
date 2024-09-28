@@ -1,26 +1,17 @@
 import Gallery from '../components/Gallery/Gallery';
-import image1 from '../assets/oh-my-deer/1.png';
-import image2 from '../assets/oh-my-deer/3.png';
-import image3 from '../assets/oh-my-deer/7.png';
-
-import image4 from '../assets/oh-my-deer/4.png';
-import image5 from '../assets/oh-my-deer/6.png';
-import image6 from '../assets/oh-my-deer/9.png';
-import image7 from '../assets/oh-my-deer/10.png';
-
 import ProjectHeader from '../components/ProjectHeader/ProjectHeader';
 import Paragraph from '../components/Paragraph/Paragraph';
+import projects from '../data/projects';
 
 function OhMyDeer() {
-  const images = [
-    { src: image1, alt: '' },
-    { src: image2, alt: '' },
-    { src: image3, alt: '' },
-  ];
+  const projectData = projects.find(
+    project => project.projectName === 'Oh My Deer',
+  );
+
   return (
     <main>
       <ProjectHeader heading="Oh my deer" subheading="2D adventure game" />
-      <Gallery images={images} />;
+      <Gallery images={projectData.images.gallery} />;
       <Paragraph title="The problem">
         <p style={{ fontSize: '1rem', lineHeight: '150%' }}>
           Excessive and unsustainable hunting, as well as poaching, have led to
@@ -70,10 +61,9 @@ function OhMyDeer() {
           margin: '3rem auto',
         }}
       >
-        <img src={image7} alt="" />
-        <img src={image4} alt="" />
-        <img src={image5} alt="" />
-        <img src={image6} alt="" />
+        {projectData.images.grid.map((img, index) => (
+          <img key={index} src={img.src} alt={img.alt} />
+        ))}
       </div>
     </main>
   );

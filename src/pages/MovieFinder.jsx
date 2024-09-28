@@ -1,22 +1,17 @@
 import Gallery from '../components/Gallery/Gallery';
-import image1 from '../assets/movie-finder/cover.png';
-import image2 from '../assets/movie-finder/1.png';
-import image3 from '../assets/movie-finder/2.png';
-import styleGuide from '../assets/movie-finder/style-guide.png';
-
 import ProjectHeader from '../components/ProjectHeader/ProjectHeader';
 import Paragraph from '../components/Paragraph/Paragraph';
+import projects from '../data/projects';
 
 function MovieFinder() {
-  const images = [
-    { src: image1, alt: '' },
-    { src: image2, alt: '' },
-    { src: image3, alt: '' },
-  ];
+  const projectData = projects.find(
+    project => project.projectName === 'Movie Finder',
+  );
+
   return (
     <main>
       <ProjectHeader heading="Movie Finder" subheading="2D adventure game" />
-      <Gallery images={images} />;
+      <Gallery images={projectData.images.gallery} />;
       <Paragraph title="About">
         <p style={{ fontSize: '1rem', lineHeight: '150%' }}>
           As part of my final project for the Dev.F bootcamp, I developed a web
@@ -100,7 +95,11 @@ function MovieFinder() {
           accent colors to highlight important elements without making the
           design too busy
         </p>
-        <img src={styleGuide} alt="" style={{ margin: '3rem 0' }} />
+        <img
+          src={projectData.images.styleGuide.src}
+          alt={projectData.images.styleGuide.alt}
+          style={{ margin: '3rem 0' }}
+        />
       </Paragraph>
     </main>
   );

@@ -5,7 +5,8 @@
   --facing: -1;
   --width: 1.5rem;
   --height: 1.5rem;
-  --fill: #000000;
+  --fill: currentColor;
+  --delay: 0ms;
 
   width: fit-content;
   perspective: 800px;
@@ -23,7 +24,7 @@
 
 .star.animating {
   --dist: min(2rem, calc(var(--height) / 2));
-  animation: upDown 1500ms infinite linear;
+  animation: upDown 2s infinite linear var(--delay);
 }
 
 .star > path {

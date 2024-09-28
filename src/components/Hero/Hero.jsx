@@ -5,39 +5,62 @@ import useHeaderRefContext from '../../hooks/useHeaderRefContext';
 import useScrollOffset from '../../hooks/useScrollOffset';
 import fadeIn from '../../utils/fadeIn';
 import styles from './Hero.module.css';
+import { useEffect, useState } from 'react';
 
 function Hero() {
   const headerRef = useHeaderRefContext();
   const scrollOffset = useScrollOffset();
+  const [headerHeight, setHeaderHeight] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const navbar = headerRef.current;
+      const navbarHeight = navbar ? navbar.offsetHeight : 0;
+      setHeaderHeight(navbarHeight);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize, { passive: true });
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [headerRef]);
 
   return (
-    <section className={styles.hero} id="home">
+    <section
+      className={styles.hero}
+      id="home"
+      style={{ '--header-height': `${headerHeight}px` }}
+    >
       <div className="container" style={{ position: 'relative' }}>
         <div className={`${styles.content}`}>
           <motion.h1
-            variants={fadeIn('up', 0.2)}
+            variants={fadeIn('down', 0.2)}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             className={styles.headline}
           >
-            I&apos;m Carlos Zamora, making ideas tangible with code and
-            creativity
+            <div>
+              I&apos;m <span className={styles.name}>Carlos Zamora</span>
+            </div>
+            <div>Bringing ideas to life</div>
           </motion.h1>
           <motion.p
-            variants={fadeIn('up', 0.5)}
+            variants={fadeIn('down', 0.4)}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             className={styles.description}
           >
-            Hello! I enjoy tackling new problems and come up with effective
-            solutions. With a solid grounding in coding, sharp analytical
-            skills, and a passion for design, I&apos;m excited to take on
-            projects that make a difference.
+            Hello! I love solving new problems with effective solutions. With
+            strong coding abilities, sharp analytical thinking, and a passion
+            for design, I&apos;m excited to work on projects that make a
+            difference.
           </motion.p>
           <motion.div
-            variants={fadeIn('up', 0.8)}
+            variants={fadeIn('down', 0.6)}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -46,13 +69,13 @@ function Hero() {
               to="/#projects"
               scrollOffset={el => scrollOffset(el, headerRef)}
             >
-              See my projects
+              Explore my work
             </Button>
           </motion.div>
         </div>
 
         <motion.div
-          variants={fadeIn('up', 1, 0.4, 30)}
+          variants={fadeIn('down', 1)}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}

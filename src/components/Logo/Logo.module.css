@@ -3,7 +3,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  color: var(--dark-gray);
+  color: var(--clr-darkish-gray);
   text-decoration: none;
   outline: none;
 }
@@ -21,7 +21,9 @@
   font-weight: var(--fw-bold);
   font-size: var(--fs-md);
   text-transform: uppercase;
-  transition: color 200ms ease-in-out, transform 200ms ease-in-out;
+  transition:
+    color 200ms ease-in-out,
+    transform 200ms ease-in-out;
 }
 
 .logo:active .logoText {

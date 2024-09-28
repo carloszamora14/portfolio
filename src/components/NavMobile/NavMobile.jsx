@@ -5,9 +5,9 @@ import { IoCloseOutline } from 'react-icons/io5';
 import useFocusTrap from '../../hooks/useTrapFocus';
 import useScrollOffset from '../../hooks/useScrollOffset';
 import useActiveSectionContext from '../../hooks/useActiveSectionContext';
+import useHeaderRefContext from '../../hooks/useHeaderRefContext';
 import navigationLinks from '../../data/navigationLinks';
 import styles from './NavMobile.module.css';
-import useHeaderRefContext from '../../hooks/useHeaderRefContext';
 
 function NavMobile() {
   const navRef = useRef(null);
@@ -25,33 +25,44 @@ function NavMobile() {
   };
 
   useEffect(() => {
-    const sidebar = sidebarRef.current;
-    if (!sidebar) return;
+    const handleResize = () => {
+      const rootFontSize = parseFloat(
+        getComputedStyle(document.documentElement).fontSize,
+      );
+      const remInPixels = 48 * rootFontSize;
 
-    const stopScrollPropagation = evt => {
-      const { scrollTop, scrollHeight, clientHeight } = sidebar;
-
-      if (
-        (evt.deltaY < 0 && scrollTop === 0) ||
-        (evt.deltaY > 0 && scrollTop + clientHeight === scrollHeight)
-      ) {
-        evt.preventDefault();
+      if (window.innerWidth >= remInPixels) {
+        setIsOpen(false);
       }
     };
 
-    if (isOpen) {
-      sidebar.addEventListener('wheel', stopScrollPropagation, {
-        passive: false,
-      });
-      sidebar.addEventListener('touchmove', stopScrollPropagation, {
-        passive: false,
-      });
-    }
+    window.addEventListener('resize', handleResize, { passive: true });
 
     return () => {
-      sidebar.removeEventListener('wheel', stopScrollPropagation);
-      sidebar.removeEventListener('touchmove', stopScrollPropagation);
+      window.removeEventListener('resize', handleResize);
     };
+  }, []);
+
+  useEffect(() => {
+    const body = document.body;
+    const scrollbarWidth = window.innerWidth - body.clientWidth;
+
+    if (isOpen) {
+      const scrollY = window.scrollY;
+
+      body.style.position = 'fixed';
+      body.style.top = `-${scrollY}px`;
+      body.style.width = '100%';
+      body.style.paddingRight = `${scrollbarWidth}px`;
+
+      return () => {
+        body.style.position = '';
+        body.style.top = '';
+        body.style.width = '';
+        body.style.paddingRight = '';
+        window.scrollTo(0, scrollY);
+      };
+    }
   }, [isOpen]);
 
   const handleMouseOver = evt => {
@@ -74,7 +85,7 @@ function NavMobile() {
         className={`${styles.sidebar} ${isOpen ? styles.active : ''}`}
         ref={sidebarRef}
       >
-        <div>
+        <div className={styles.sidebarContent}>
           <button
             onClick={handleClose}
             className={styles.closeButton}
@@ -86,6 +97,8 @@ function NavMobile() {
           </button>
 
           <nav ref={navRef} className={styles.nav}>
+            <div className={styles.gradientBackground} aria-hidden="true" />
+
             <ul className={styles.navList}>
               {navigationLinks.map((link, index) => (
                 <li
@@ -94,11 +107,11 @@ function NavMobile() {
                   data-index={index}
                   style={{ '--index': index }}
                   onMouseOver={handleMouseOver}
-                  onClick={handleClose}
                 >
                   <Link
                     smooth
                     to={link.url}
+                    onClick={handleClose}
                     className={`${styles.itemLink} ${activeSection === link.id ? styles.active : ''}`}
                     tabIndex={isOpen ? 0 : -1}
                     ref={
@@ -113,8 +126,6 @@ function NavMobile() {
                 </li>
               ))}
             </ul>
-
-            <div className={styles.gradientBackground} aria-hidden="true"></div>
           </nav>
         </div>
       </aside>

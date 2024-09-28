@@ -7,7 +7,7 @@
   position: relative;
   font-family: var(--ff-text);
   font-size: var(--fs-sm);
-  color: var(--clr-dark-gray);
+  color: var(--clr-gray);
   text-decoration: none;
   transition: color 200ms ease-in-out;
 }
@@ -16,35 +16,33 @@
   content: '';
   position: absolute;
   left: 0;
-  right: 0;
   bottom: -2px;
-  height: 2px;
-  background-color: var(--clr-purple);
+  width: 1.5rem;
+  height: 1.5px;
+  background-color: currentColor;
   border-radius: 0.125rem;
   transform: scaleX(0);
+  transform-origin: left;
   transition: transform 200ms ease-in-out;
-}
-
-.navLink:active {
-  color: var(--clr-midnight-blue);
-}
-
-.navLink.active {
-  color: var(--clr-midnight-blue);
-}
-
-.navLink.active::before {
-  transform: scaleX(1);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .navLink:hover {
-    color: var(--clr-midnight-blue);
+    color: var(--clr-darkish-gray);
   }
 
   .navLink:hover::before {
     transform: scaleX(1);
   }
+}
+
+.navLink:active,
+.navLink.active {
+  color: var(--clr-darkish-gray);
+}
+
+.navLink.active::before {
+  transform: scaleX(1);
 }
 
 @media screen and (min-width: 48rem) {

@@ -1,4 +1,5 @@
 .footer {
+  margin-top: clamp(2rem, 2rem + 3.3333vw, 5rem);
   background-color: var(--clr-dark);
 }
 
@@ -9,7 +10,7 @@
 .description {
   font-family: var(--ff-text);
   font-weight: var(--fw-regular);
-  font-size: var(--fs-xs);
+  font-size: var(--fs-sm);
   color: var(--clr-light-gray);
   margin-top: 2rem;
 }
@@ -53,11 +54,9 @@
 }
 
 .bottomBanner {
-  /* padding: 0.5rem 0;
-  background-color: var(--clr-turquoise); */
   font-family: var(--ff-text);
   font-weight: var(--fw-light);
-  font-size: var(--fs-xxs);
+  font-size: var(--fs-xs);
   color: var(--clr-light-gray);
   text-transform: uppercase;
 }

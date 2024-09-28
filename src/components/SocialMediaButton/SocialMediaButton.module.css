@@ -18,7 +18,7 @@
 }
 
 .content {
-  --padding: 0.75rem;
+  --padding: 1rem;
 
   position: relative;
   display: flex;
@@ -29,9 +29,9 @@
 .iconWrapper {
   position: relative;
   padding: var(--padding);
-  width: calc(var(--padding) + var(--fs-md));
-  height: calc(var(--padding) + var(--fs-md));
-  font-size: var(--fs-sm);
+  width: calc(var(--padding) + var(--fs-lg));
+  height: calc(var(--padding) + var(--fs-lg));
+  font-size: var(--fs-md);
   border-radius: 50%;
   overflow: hidden;
   transition: transform 200ms ease-in-out;
@@ -48,7 +48,7 @@
 }
 
 .text {
-  font-size: var(--fs-xxs);
+  font-size: var(--fs-sm);
   font-weight: var(--fw-light);
   width: 0;
   transition: width 200ms ease-in-out 200ms;
@@ -60,6 +60,6 @@
   }
 
   .link:hover .iconWrapper {
-    transform: scale(0.7);
+    transform: scale(0.85);
   }
 }

@@ -1,18 +1,19 @@
 .header {
   text-align: center;
   padding-top: 4rem;
+  margin-top: var(--header-height);
 }
 
 .heading {
   font-family: var(--ff-headings);
   font-weight: var(--fw-bold);
-  font-size: var(--fs-xl);
+  font-size: var(--fs-xxl);
   color: var(--clr-midnight-blue);
 }
 
 .subheading {
   font-family: var(--ff-text);
   font-weight: var(--fw-regular);
-  font-size: var(--fs-xs);
+  font-size: var(--fs-sm);
   color: var(--clr-dark-gray);
 }

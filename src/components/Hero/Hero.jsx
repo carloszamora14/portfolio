@@ -1,31 +1,16 @@
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Button from '../Button/Button';
 import Star from '../Star/Star';
 import useHeaderRefContext from '../../hooks/useHeaderRefContext';
 import useScrollOffset from '../../hooks/useScrollOffset';
+import useElementHeight from '../../hooks/useElementHeight';
 import fadeIn from '../../utils/fadeIn';
 import styles from './Hero.module.css';
 
 function Hero() {
   const headerRef = useHeaderRefContext();
   const scrollOffset = useScrollOffset();
-  const [headerHeight, setHeaderHeight] = useState(0);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const navbar = headerRef.current;
-      const navbarHeight = navbar ? navbar.offsetHeight : 0;
-      setHeaderHeight(navbarHeight);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize, { passive: true });
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [headerRef]);
+  const headerHeight = useElementHeight(headerRef);
 
   return (
     <section

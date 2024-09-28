@@ -1,9 +1,20 @@
 import { HashLink as Link } from 'react-router-hash-link';
+import useHeaderRefContext from '../../hooks/useHeaderRefContext';
+import useScrollOffset from '../../hooks/useScrollOffset';
 import styles from './Logo.module.css';
 
 function Logo() {
+  const headerRef = useHeaderRefContext();
+  const scrollOffset = useScrollOffset();
+
   return (
-    <Link smooth to="/#home" aria-label="Home" className={styles.logo}>
+    <Link
+      smooth
+      to="/#home"
+      aria-label="Home"
+      className={styles.logo}
+      scroll={el => scrollOffset(el, headerRef)}
+    >
       <div className={styles.iconWrapper} aria-hidden="true">
         {Array(3)
           .fill(null)

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Button from '../Button/Button';
 import Star from '../Star/Star';
@@ -5,7 +6,6 @@ import useHeaderRefContext from '../../hooks/useHeaderRefContext';
 import useScrollOffset from '../../hooks/useScrollOffset';
 import fadeIn from '../../utils/fadeIn';
 import styles from './Hero.module.css';
-import { useEffect, useState } from 'react';
 
 function Hero() {
   const headerRef = useHeaderRefContext();

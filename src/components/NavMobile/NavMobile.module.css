@@ -59,7 +59,7 @@
 
 .itemLink {
   font-family: var(--ff-headings);
-  font-weight: var(--fw-semi-bold);
+  font-weight: var(--fw-bold);
   font-size: var(--fs-xxl);
   color: var(--clr-lavender);
   text-decoration: none;

@@ -1,7 +1,7 @@
 .wrapper {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 1.25rem;
+  right: 1.25rem;
 }
 
 .button {
@@ -17,19 +17,6 @@
     background-color 300ms ease-in-out,
     transform 150ms ease-in-out,
     opacity 300ms ease-in-out;
-}
-
-.button:hover {
-  opacity: 1;
-  transform: scale(0.95);
-}
-
-.button:focus-visible {
-  opacity: 1;
-}
-
-.button:active {
-  transform: scale(0.85);
 }
 
 .button.playing {
@@ -72,4 +59,20 @@
   100% {
     background-color: var(--clr-turquoise);
   }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    opacity: 1;
+    transform: scale(0.95);
+  }
+}
+
+.button:focus-visible {
+  opacity: 1;
+}
+
+.button:active {
+  opacity: 1;
+  transform: scale(0.85);
 }

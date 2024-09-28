@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { HashLink as Link } from 'react-router-hash-link';
 import { RiMenu2Line } from 'react-icons/ri';
 import { IoCloseOutline } from 'react-icons/io5';
@@ -10,6 +11,7 @@ import navigationLinks from '../../data/navigationLinks';
 import styles from './NavMobile.module.css';
 
 function NavMobile() {
+  const { pathname } = useLocation();
   const navRef = useRef(null);
   const sidebarRef = useRef(null);
   const headerRef = useHeaderRefContext();
@@ -119,7 +121,12 @@ function NavMobile() {
                         ? lastElementRef
                         : null
                     }
-                    scroll={el => scrollOffset(el, headerRef)}
+                    scroll={el =>
+                      scrollOffset(
+                        link.id === 'contact' ? null : el,
+                        pathname === '/' ? headerRef : null,
+                      )
+                    }
                   >
                     {link.name}
                   </Link>

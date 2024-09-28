@@ -13,22 +13,24 @@
   --clr-light-gray: #9b9c9c;
   --clr-gray: #676a6a;
   --clr-dark-gray: #2c2c2c;
-  /* --clr-dark-gray: #464749; */
+  --clr-darkish-gray: #4b4b4b;
   --clr-white-overlay: #fdfbfb20;
 
   --ff-headings: 'Poppins', sans-serif;
   --ff-text: 'Inter', sans-serif;
 
-  --fs-xxl: 3rem;
-  --fs-xl: 2rem;
-  --fs-lg: 1.5rem;
-  --fs-md: 1.25rem;
-  --fs-sm: 1rem;
-  --fs-xs: 0.875rem;
-  --fs-xxs: 0.75rem;
+  --fs-xxs: clamp(0.75rem, 0.75rem + 0.1389vw, 0.875rem);
+  --fs-xs: clamp(0.8125rem, 0.8125rem + 0.2083vw, 1rem);
+  --fs-sm: clamp(0.875rem, 0.875rem + 0.2778vw, 1.125rem);
+  --fs-md: clamp(0.9375rem, 0.9375rem + 0.3472vw, 1.25rem);
+  --fs-lg: clamp(1rem, 1rem + 0.5556vw, 1.5rem);
+  --fs-xl: clamp(1.125rem, 1.125rem + 0.9722vw, 2rem);
+  --fs-xxl: clamp(2rem, 2rem + 1.1111vw, 3rem);
+  --fs-hero: clamp(2.25rem, 2rem + 3.0555vw, 5rem);
 
   --fw-light: 300;
   --fw-regular: 400;
+  --fw-medium: 500;
   --fw-semi-bold: 600;
   --fw-bold: 700;
 
@@ -50,6 +52,7 @@ html {
   box-sizing: inherit;
 }
 
+html,
 body,
 h1,
 h2,
@@ -78,7 +81,7 @@ img {
 body {
   font-family: var(--ff-text);
   background-color: var(--clr-white);
-  overflow-x: hidden;
+  width: 100%;
 }
 
 .sr-only {
@@ -99,56 +102,6 @@ body {
   margin: 0 auto;
 }
 
-@media (min-width: 576px) {
-  :root {
-    --fs-xxl: 3.5rem;
-    --fs-xl: 2.5rem;
-    --fs-lg: 1.75rem;
-    --fs-md: 1.5rem;
-    --fs-sm: 1.125rem;
-    --fs-xs: 1rem;
-    --fs-xxs: 0.875rem;
-  }
-}
-
-@media (min-width: 768px) {
-  :root {
-    --fs-xxl: 4rem;
-    --fs-xl: 3rem;
-    --fs-lg: 2rem;
-    --fs-md: 1.75rem;
-    --fs-sm: 1.25rem;
-    --fs-xs: 1.125rem;
-    --fs-xxs: 1rem;
-  }
-}
-
-@media (min-width: 992px) {
-  :root {
-    --fs-xxl: 4.5rem;
-    --fs-xl: 3.5rem;
-    --fs-lg: 2.5rem;
-    --fs-md: 2rem;
-    --fs-sm: 1.5rem;
-    --fs-xs: 1.25rem;
-    --fs-xxs: 1.125rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  :root {
-    --fs-xxl: 5rem;
-    --fs-xl: 4rem;
-    --fs-lg: 3rem;
-    --fs-md: 2.25rem;
-    --fs-sm: 1.75rem;
-    --fs-xs: 1.5rem;
-    --fs-xxs: 1.25rem;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
+#root {
+  overflow-x: hidden;
 }

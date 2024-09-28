@@ -1,28 +1,95 @@
+import photo from '../../assets/profile-photo.png';
+import SectionHeader from '../SectionHeader/SectionHeader';
 import styles from './About.module.css';
 
 function About() {
   return (
     <section className={styles.about} id="about">
-      <div className={styles.aboutContent}>
-        <h2 className={styles.aboutTitle}>About Me</h2>
-        <p className={styles.aboutText}>
-          Hi, I&apos;m [Your Name], a passionate [Your Profession or Specialty]
-          with a love for [Your Interests or Hobbies]. I specialize in creating
-          innovative and effective solutions that help people achieve their
-          goals. With a background in [Your Background or Experience], I bring a
-          unique perspective to every project.
-        </p>
-        <p className={styles.aboutText}>
-          My journey began in [Year or Start of Career], and since then,
-          I&apos;ve had the pleasure of working on a variety of exciting
-          projects. I&apos;m dedicated to continuous learning and staying up-to-date
-          with the latest trends and technologies in my field.
-        </p>
-        <p className={styles.aboutText}>
-          When I&apos;m not working, you can find me [Describe Hobbies or
-          Interests]. Feel free to reach out if you&apos;d like to connect or
-          collaborate on a project!
-        </p>
+      <div className="container">
+        <SectionHeader heading="About me" subheading="Who am I." />
+        <div className={styles.content}>
+          <div className={styles.details}>
+            <p className={styles.description}>
+              Hi, I&apos;m Carlos Zamora, a software engineering student close
+              to graduating and a full-stack developer who loves coding. I enjoy
+              building practical and creative solutions that help people get
+              things done. With experience in both front-end and back-end
+              development, I&apos;m able to see the bigger picture when it comes
+              to creating websites and apps.
+            </p>
+            <p className={styles.description}>
+              Since I started this journey, I&apos;ve worked on a variety of
+              projects, learning how to make responsive, easy-to-use
+              applications. I&apos;m always excited to learn new skills and stay
+              up-to-date with the latest tools and trends in tech.
+            </p>
+            <p className={styles.description}>
+              Some of my key interests include software security, database
+              management, and UI/UX design.
+            </p>
+
+            <a
+              href="/resume.pdf"
+              download="Carlos_Zamora_CV.pdf"
+              className={styles.button}
+            >
+              Download resume
+            </a>
+          </div>
+          <figure className={styles.profileContainer}>
+            <img
+              src={photo}
+              alt="Profile photo of Carlos Zamora"
+              className={styles.profileImage}
+            />
+            <svg
+              width="356"
+              height="396"
+              viewBox="0 0 356 396"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              role="img"
+              className={styles.backgroundSVG}
+            >
+              <rect
+                x="141.875"
+                y="76.0479"
+                width="50"
+                height="283"
+                rx="25"
+                transform="rotate(30 141.875 76.0479)"
+                fill="currentColor"
+              />
+              <rect
+                x="184.5"
+                y="4"
+                width="50"
+                height="65"
+                rx="25"
+                transform="rotate(30 184.5 4)"
+                fill="currentColor"
+              />
+              <rect
+                x="283"
+                width="50"
+                height="400"
+                rx="25"
+                transform="rotate(30 283 0)"
+                fill="currentColor"
+              />
+              <rect
+                x="312"
+                y="111"
+                width="50"
+                height="300"
+                rx="25"
+                transform="rotate(30 312 111)"
+                fill="currentColor"
+              />
+            </svg>
+          </figure>
+        </div>
       </div>
     </section>
   );

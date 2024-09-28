@@ -1,5 +1,5 @@
 .section {
-  margin: 3rem 0;
+  margin-top: clamp(2rem, 2rem + 3.3333vw, 5rem);
 }
 
 .contentWrapper {
@@ -12,17 +12,22 @@
   font-family: var(--ff-text);
   font-weight: var(--fw-regular);
   font-size: var(--fs-sm);
-  color: var(--clr-gray);
+  line-height: 1.5;
+  text-wrap: pretty;
+  color: var(--clr-darkish-gray);
+  margin-top: 1.25em;
   max-width: 60rem;
 }
 
 .description ~ .description {
-  margin-top: 1.25rem;
+  margin-top: 1.25em;
 }
 
 .list {
+  --icon-size: clamp(2rem, 2rem + 1.1111vw, 3rem);
+
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--fs-xl), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(var(--icon-size), 1fr));
   gap: 1.5rem;
 }
 
@@ -31,7 +36,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 200ms ease-in-out, transform 250ms ease-in-out;
+  transition:
+    opacity 200ms ease-in-out,
+    transform 250ms ease-in-out;
 }
 
 .listItem::before {
@@ -60,8 +67,8 @@
 }
 
 .icon {
-  width: var(--fs-xl);
-  height: var(--fs-xl);
+  width: var(--icon-size);
+  height: var(--icon-size);
 }
 
 @media screen and (min-width: 80rem) {
@@ -70,7 +77,11 @@
     align-items: center;
   }
 
+  .details {
+    margin: 1.25rem 0;
+  }
+
   .skillsDisplay {
-    min-width: 40%;
+    min-width: 45%;
   }
 }

@@ -23,19 +23,18 @@ function SkillsList() {
             className={styles.details}
           >
             <p className={styles.description}>
-              I enjoy working with JavaScript, CSS, and HTML to create simple
-              but engaging and user-friendly websites. With React, I build
-              responsive and interactive features that make web applications
-              more enjoyable to use. I also have experience with Node.js for
-              server-side programming and handle data with MySQL and MongoDB.
-              For design and prototyping, I use Figma to turn concepts into
-              clear and attractive visuals.
+              I enjoy using JavaScript, CSS, and HTML to create simple websites.
+              React is my go-to technology for creating interactive applications
+              with a smooth and engaging user experience. I also have experience
+              with Node.js for server-side programming and work with MySQL and
+              MongoDB for data management. For design and prototyping, I use
+              Figma to turn ideas into clear and attractive designs.
             </p>
             <p className={styles.description}>
-              I&apos;m also familiar with another technologies like C, C++, Java
-              and Bash. While I&apos;m not a master of these languages, my
-              curiosity drives me to learn and explore new tools and techniques,
-              making me adaptable and eager to tackle new challenges.
+              I also know other technologies like C, C++, Java, and Bash.
+              I&apos;m not an expert in these languages, but my curiosity
+              motivates me to learn and try new tools, making me flexible and
+              ready to take on new challenges.
             </p>
           </motion.div>
           <motion.div

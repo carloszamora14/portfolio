@@ -6,7 +6,7 @@ function useScrollOffset() {
     const navbarHeight = navbar ? navbar.offsetHeight : 0;
 
     const elementPosition = el.getBoundingClientRect().top + window.scrollY;
-    const offsetPosition = elementPosition - navbarHeight;
+    const offsetPosition = elementPosition - navbarHeight - 16;
 
     window.scrollTo({
       top: offsetPosition,

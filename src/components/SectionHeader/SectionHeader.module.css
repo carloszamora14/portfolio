@@ -9,7 +9,7 @@
   gap: 0.25rem;
   font-family: var(--ff-headings);
   font-weight: var(--fw-bold);
-  font-size: var(--fs-lg);
+  font-size: var(--fs-xxl);
   line-height: 1;
   color: var(--clr-midnight-blue);
 }
@@ -21,13 +21,13 @@
 .subheading {
   font-family: var(--ff-headings);
   font-weight: var(--fw-semi-bold);
-  font-size: var(--fs-sm);
+  font-size: var(--fs-lg);
   letter-spacing: 2px;
   color: var(--clr-turquoise);
 }
 
 .star {
-  --height: var(--fs-xl);
-  --width: calc(var(--fs-xl) * 0.75);
+  --height: calc(var(--fs-hero) * 0.75);
+  --width: calc(var(--fs-hero) * 0.65);
   --fill: var(--clr-lavender);
 }

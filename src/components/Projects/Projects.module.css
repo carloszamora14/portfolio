@@ -1,8 +1,13 @@
+.section {
+  margin-top: clamp(2rem, 2rem + 3.3333vw, 5rem);
+}
+
 .description {
   font-family: var(--ff-text);
   font-weight: var(--fw-regular);
   font-size: var(--fs-sm);
-  color: var(--clr-gray);
+  color: var(--clr-darkish-gray);
+  margin-top: 1.25em;
   max-width: 60rem;
 }
 
@@ -23,10 +28,15 @@
   .content {
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   }
+
+  .content {
+    gap: 1.75rem;
+  }
 }
 
 @media screen and (min-width: 60rem) {
   .content {
-    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 2rem;
   }
 }

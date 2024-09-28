@@ -99,6 +99,8 @@ function MovieFinder() {
           src={projectData.images.styleGuide.src}
           alt={projectData.images.styleGuide.alt}
           style={{ margin: '3rem 0' }}
+          loading="lazy"
+          decoding="async"
         />
       </Paragraph>
     </main>

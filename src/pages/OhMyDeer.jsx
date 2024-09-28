@@ -62,7 +62,13 @@ function OhMyDeer() {
         }}
       >
         {projectData.images.grid.map((img, index) => (
-          <img key={index} src={img.src} alt={img.alt} />
+          <img
+            key={index}
+            src={img.src}
+            alt={img.alt}
+            loading="lazy"
+            decoding="async"
+          />
         ))}
       </div>
     </main>

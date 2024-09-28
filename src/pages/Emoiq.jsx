@@ -105,6 +105,8 @@ function Emoiq() {
           style={{ width: '100%' }}
           src={projectData.images.sitemap.src}
           alt={projectData.images.sitemap.alt}
+          loading="lazy"
+          decoding="async"
         />
       </Paragraph>
       <Paragraph title="Style guide" orientation="col">
@@ -126,6 +128,8 @@ function Emoiq() {
           style={{ width: '100%', margin: '2rem 0 3rem' }}
           src={projectData.images.styleGuide.src}
           alt={projectData.images.styleGuide.alt}
+          loading="lazy"
+          decoding="async"
         />
       </Paragraph>
     </main>

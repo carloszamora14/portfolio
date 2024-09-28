@@ -60,6 +60,8 @@ function DailyUIChallenge() {
           style={{ width: '100%', margin: '2rem 0 3rem' }}
           src={projectData.images.showcase.src}
           alt={projectData.images.showcase.alt}
+          loading="lazy"
+          decoding="async"
         />
       </Paragraph>
     </main>

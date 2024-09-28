@@ -23,6 +23,9 @@
 }
 
 .sidebarContent {
+  --padding-close-button: 0.5rem;
+  --left-spacing: 1rem;
+
   height: 100%;
   overflow-y: auto;
 }
@@ -37,7 +40,7 @@
 }
 
 .navList {
-  padding-left: 1.5rem;
+  padding-left: var(--left-spacing);
   margin: 5rem 0;
   z-index: var(--z-index-foreground);
 }
@@ -115,7 +118,7 @@
 .closeButton {
   position: absolute;
   top: 2rem;
-  left: 1.5rem;
+  left: var(--left-spacing);
   font-size: 2.5rem;
   color: var(--clr-lavender);
   border-radius: 50%;
@@ -152,8 +155,8 @@
 .closeButton:active {
   transform: scale(0.8);
   top: 1.5rem;
-  left: 1rem;
-  padding: 0.5rem;
+  left: calc(var(--left-spacing) - var(--padding-close-button));
+  padding: var(--padding-close-button);
   opacity: 1;
   transition:
     opacity 100ms ease-in-out,
@@ -164,31 +167,21 @@
   transform: translate(-50%, -50%) scale(0.8);
 }
 
+@media screen and (min-width: 12rem) {
+  .sidebarContent {
+    --left-spacing: 1.5rem;
+  }
+}
+
 @media screen and (min-width: 20rem) {
-  .navList {
-    padding-left: 2.5rem;
-  }
-
-  .closeButton {
-    left: 2.5rem;
-  }
-
-  .closeButton:active {
-    left: 2rem;
+  .sidebarContent {
+    --left-spacing: 2rem;
   }
 }
 
 @media screen and (min-width: 30rem) {
-  .navList {
-    padding-left: 3rem;
-  }
-
-  .closeButton {
-    left: 3rem;
-  }
-
-  .closeButton:active {
-    left: 2.5rem;
+  .sidebarContent {
+    --left-spacing: 3rem;
   }
 }
 

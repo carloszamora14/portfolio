@@ -59,6 +59,8 @@ function SkillsList() {
                       src={skill.url}
                       className={styles.icon}
                       alt={`${skill.name} icon`}
+                      loading="lazy"
+                      decoding="async"
                     />
                   </Tooltip>
                 </li>

@@ -40,6 +40,8 @@ function About() {
             <img
               src={photo}
               alt="Profile photo of Carlos Zamora"
+              loading="lazy"
+              decoding="async"
               className={styles.profileImage}
             />
             <svg

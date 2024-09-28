@@ -8,7 +8,6 @@ function Gallery({ images }) {
     <section
       className={styles.gallery}
       aria-label="Image Gallery"
-      role="region"
       style={{ '--quantity': len }}
     >
       <div className={styles.content}>

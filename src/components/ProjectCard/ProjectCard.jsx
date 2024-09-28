@@ -6,7 +6,13 @@ function ProjectCard({ img, imgAlt, projectName, description, url }) {
     <article className={styles.card}>
       <figure className={styles.figure}>
         <div className={styles.imageWrapper}>
-          <img src={img} alt={imgAlt} className={styles.image} />
+          <img
+            src={img}
+            alt={imgAlt}
+            className={styles.image}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
         <figcaption className={styles.details}>
           <h3 className={styles.title}>{projectName}</h3>

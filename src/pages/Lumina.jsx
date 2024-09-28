@@ -74,6 +74,8 @@ function Lumina() {
           src={projectData.images.sprintBacklog.src}
           alt={projectData.images.sprintBacklog.alt}
           style={{ width: '100%', marginTop: '2rem' }}
+          loading="lazy"
+          decoding="async"
         />
       </Paragraph>
       <Paragraph title="My contribution">
@@ -124,6 +126,8 @@ function Lumina() {
           src={projectData.images.styleGuide.src}
           alt={projectData.images.styleGuide.alt}
           style={{ width: '100%', margin: '2rem 0 3rem' }}
+          loading="lazy"
+          decoding="async"
         />
       </Paragraph>
     </main>

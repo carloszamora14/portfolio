@@ -58,6 +58,8 @@ function DonaBikes() {
             style={{ width: '100%', maxWidth: '60rem' }}
             src={projectData.images.taskFlow.src}
             alt={projectData.images.taskFlow.alt}
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </Paragraph>
@@ -66,6 +68,8 @@ function DonaBikes() {
           style={{ width: '100%', marginTop: '2rem' }}
           src={projectData.images.lofi.src}
           alt={projectData.images.lofi.alt}
+          loading="lazy"
+          decoding="async"
         />
       </Paragraph>
       <Paragraph title="Style guide" orientation="col">
@@ -90,6 +94,8 @@ function DonaBikes() {
           style={{ width: '100%', marginTop: '2rem' }}
           src={projectData.images.styleGuide.src}
           alt={projectData.images.styleGuide.alt}
+          loading="lazy"
+          decoding="async"
         />
       </Paragraph>
       <Paragraph title="High fidelity prototype" orientation="col">

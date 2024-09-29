@@ -2,6 +2,7 @@
 
 Repository for my portfolio, showcasing my skills and projects. Built with React and CSS Modules.
 
-## Current status
+## TODO
 
-Almost finished, just need to make some CSS improvements and adjust the responsive font sizes.
+- Add a contact form.
+- Implement responsive images for better loading and performance.

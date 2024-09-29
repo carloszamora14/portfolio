@@ -87,7 +87,7 @@ const projects = [
         data: [
           {
             text: 'Website with all my designs',
-            url: 'https://github.com/carloszamora14',
+            url: 'https://carloszamora14.github.io/daily-ui-challenge/',
           },
           {
             text: 'My Hype4 Academy profile',

@@ -4,7 +4,7 @@ import Star from '../Star/Star';
 import useHeaderRefContext from '../../hooks/useHeaderRefContext';
 import useScrollOffset from '../../hooks/useScrollOffset';
 import useElementHeight from '../../hooks/useElementHeight';
-import fadeIn from '../../utils/fadeIn';
+import createMotionConfig from '../../utils/fadeIn';
 import styles from './Hero.module.css';
 
 function Hero() {
@@ -21,10 +21,7 @@ function Hero() {
       <div className={`container ${styles.contentWrapper}`}>
         <div className={`${styles.content}`}>
           <motion.h1
-            variants={fadeIn('down', 0.2)}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            {...createMotionConfig('down', 0.2)}
             className={styles.headline}
           >
             <div>
@@ -33,10 +30,7 @@ function Hero() {
             <div>Bringing ideas to life</div>
           </motion.h1>
           <motion.p
-            variants={fadeIn('down', 0.4)}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            {...createMotionConfig('down', 0.4)}
             className={styles.description}
           >
             Hello! I love solving new problems with effective solutions. With
@@ -44,12 +38,7 @@ function Hero() {
             for design, I&apos;m excited to work on projects that make a
             difference.
           </motion.p>
-          <motion.div
-            variants={fadeIn('down', 0.6)}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-          >
+          <motion.div {...createMotionConfig('down', 0.6)}>
             <Button
               to="/#projects"
               scrollOffset={el => scrollOffset(el, headerRef)}
@@ -60,10 +49,7 @@ function Hero() {
         </div>
 
         <motion.div
-          variants={fadeIn('down', 1)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          {...createMotionConfig('down', 1)}
           className={styles.decorations}
           aria-hidden="true"
         >

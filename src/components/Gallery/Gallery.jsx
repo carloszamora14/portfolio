@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+import createMotionConfig from '../../utils/fadeIn';
 import styles from './Gallery.module.css';
 
 function Gallery({ images }) {
@@ -5,7 +7,8 @@ function Gallery({ images }) {
   const extendedImages = [images.at(-1), ...images, images.at(0), images.at(1)];
 
   return (
-    <section
+    <motion.section
+      {...createMotionConfig('down', 0.2)}
       className={styles.gallery}
       aria-label="Image Gallery"
       style={{ '--quantity': len }}
@@ -28,7 +31,7 @@ function Gallery({ images }) {
           })}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

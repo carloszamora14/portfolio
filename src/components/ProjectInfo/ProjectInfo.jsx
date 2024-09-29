@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+import createMotionConfig from '../../utils/fadeIn';
 import styles from './ProjectInfo.module.css';
 
 function ProjectInfo({ projectInfo }) {
@@ -12,13 +14,19 @@ function ProjectInfo({ projectInfo }) {
 
       <div className={styles.grid}>
         {projectInfo.tools && (
-          <div className={styles.gridItem}>
+          <motion.div
+            {...createMotionConfig('down', 0.2)}
+            className={styles.gridItem}
+          >
             <h3 className={styles.title}>{projectInfo.tools.title}</h3>
             <p className={styles.infoText}>{projectInfo.tools.data}</p>
-          </div>
+          </motion.div>
         )}
         {projectInfo.links && (
-          <div className={styles.gridItem}>
+          <motion.div
+            {...createMotionConfig('down', 0.2)}
+            className={styles.gridItem}
+          >
             <h3 className={styles.title}>{projectInfo.links.title}</h3>
             <ul className={styles.linksList}>
               {projectInfo.links.data.map(link => (
@@ -34,7 +42,7 @@ function ProjectInfo({ projectInfo }) {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         )}
       </div>
     </section>

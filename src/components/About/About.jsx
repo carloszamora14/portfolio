@@ -1,6 +1,8 @@
-import photo from '../../assets/profile-photo.png';
+import { motion } from 'framer-motion';
 import SectionHeader from '../SectionHeader/SectionHeader';
+import createMotionConfig from '../../utils/fadeIn';
 import styles from './About.module.css';
+import photo from '../../assets/profile-photo.png';
 
 function About() {
   return (
@@ -9,42 +11,54 @@ function About() {
         <SectionHeader heading="About me" subheading="Who am I." />
         <div className={styles.content}>
           <div className={styles.details}>
-            <p className={styles.description}>
+            <motion.p
+              {...createMotionConfig('down', 0.2)}
+              className={styles.description}
+            >
               Hi, I&apos;m Carlos Zamora, a software engineering student close
               to graduating and a full-stack developer who loves coding. I enjoy
               building practical and creative solutions that help people get
               things done. With experience in both front-end and back-end
               development, I&apos;m able to see the bigger picture when it comes
               to creating websites and apps.
-            </p>
-            <p className={styles.description}>
+            </motion.p>
+            <motion.p
+              {...createMotionConfig('down', 0.2)}
+              className={styles.description}
+            >
               Since I started this journey, I&apos;ve worked on a variety of
               projects, learning how to make responsive, easy-to-use
               applications. I&apos;m always excited to learn new skills and stay
               up-to-date with the latest tools and trends in tech.
-            </p>
-            <p className={styles.description}>
+            </motion.p>
+            <motion.p
+              {...createMotionConfig('down', 0.2)}
+              className={styles.description}
+            >
               Some of my key interests include software security, database
               management, and UI/UX design.
-            </p>
+            </motion.p>
 
-            <a
+            <motion.a
+              {...createMotionConfig('down', 0.2)}
               href="/resume.pdf"
               download="Carlos_Zamora_CV.pdf"
               className={styles.button}
             >
               Download resume
-            </a>
+            </motion.a>
           </div>
           <figure className={styles.profileContainer}>
-            <img
+            <motion.img
+              {...createMotionConfig('down', 0.4)}
               src={photo}
               alt="Profile photo of Carlos Zamora"
               loading="lazy"
               decoding="async"
               className={styles.profileImage}
             />
-            <svg
+            <motion.svg
+              {...createMotionConfig('down', 0.2)}
               width="356"
               height="396"
               viewBox="0 0 356 396"
@@ -89,7 +103,7 @@ function About() {
                 transform="rotate(30 312 111)"
                 fill="currentColor"
               />
-            </svg>
+            </motion.svg>
           </figure>
         </div>
       </div>

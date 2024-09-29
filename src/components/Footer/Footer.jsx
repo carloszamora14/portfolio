@@ -4,7 +4,7 @@ import { RiGithubLine } from 'react-icons/ri';
 import { IoHeart } from 'react-icons/io5';
 import SectionHeader from '../SectionHeader/SectionHeader';
 import SocialMediaButton from '../SocialMediaButton/SocialMediaButton';
-import fadeIn from '../../utils/fadeIn';
+import createMotionConfig from '../../utils/fadeIn';
 import styles from './Footer.module.css';
 
 function Footer() {
@@ -19,19 +19,13 @@ function Footer() {
           darkVariant={true}
         />
         <motion.p
-          variants={fadeIn('up', 0.4)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.4 }}
+          {...createMotionConfig('down', 0.2)}
           className={styles.description}
         >
           Feel free to contact me if you have any questions or want to connect.
         </motion.p>
         <motion.div
-          variants={fadeIn('up', 0.8)}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.4 }}
+          {...createMotionConfig('down', 0.2)}
           className={styles.contactInfo}
         >
           <a href={`mailto:${emailAddress}`} className={styles.email}>
@@ -39,10 +33,7 @@ function Footer() {
             {emailAddress}
           </a>
           <motion.div
-            variants={fadeIn('up', 1)}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.4 }}
+            {...createMotionConfig('down', 0.2)}
             className={styles.socials}
           >
             <SocialMediaButton

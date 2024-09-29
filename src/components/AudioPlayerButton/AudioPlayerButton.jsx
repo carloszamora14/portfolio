@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import createMotionConfig from '../../utils/fadeIn';
 import styles from './AudioPlayerButton.module.css';
 
 function AudioPlayerButton() {
@@ -21,7 +23,7 @@ function AudioPlayerButton() {
   };
 
   return (
-    <div className={styles.wrapper}>
+    <motion.div {...createMotionConfig('down', 1)} className={styles.wrapper}>
       <button
         onClick={togglePlayPause}
         aria-pressed={isPlaying}
@@ -48,7 +50,7 @@ function AudioPlayerButton() {
         type="audio/mpeg"
         loop
       />
-    </div>
+    </motion.div>
   );
 }
 

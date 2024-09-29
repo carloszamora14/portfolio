@@ -1,9 +1,4 @@
-function fadeIn(
-  initialDirection,
-  delay,
-  animationDuration = 0.6,
-  distance = 20,
-) {
+function fadeIn(initialDirection, delay, duration, distance) {
   const initialPosition = {};
 
   switch (initialDirection) {
@@ -31,11 +26,22 @@ function fadeIn(
       y: 0,
       x: 0,
       transition: {
-        duration: animationDuration,
+        duration: duration,
         delay: delay,
       },
     },
   };
 }
 
-export default fadeIn;
+function createMotionConfig(direction = 'down', delay = 0.2, amount = 0.2) {
+  const variants = fadeIn(direction, delay, 0.6, 20);
+
+  return {
+    variants,
+    initial: 'hidden',
+    whileInView: 'visible',
+    viewport: { once: true, amount: amount },
+  };
+}
+
+export default createMotionConfig;

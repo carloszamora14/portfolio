@@ -1,5 +1,7 @@
+import { motion } from 'framer-motion';
 import useElementHeight from '../../hooks/useElementHeight';
 import useHeaderRefContext from '../../hooks/useHeaderRefContext';
+import createMotionConfig from '../../utils/fadeIn';
 import styles from './ProjectHeader.module.css';
 
 function ProjectHeader({ heading, subheading }) {
@@ -12,8 +14,18 @@ function ProjectHeader({ heading, subheading }) {
       style={{ '--header-height': `${headerHeight}px` }}
     >
       <div className="container">
-        <h1 className={styles.heading}>{heading}</h1>
-        <p className={styles.subheading}>{subheading}</p>
+        <motion.h1
+          {...createMotionConfig('down', 0.2)}
+          className={styles.heading}
+        >
+          {heading}
+        </motion.h1>
+        <motion.p
+          {...createMotionConfig('down', 0.2)}
+          className={styles.subheading}
+        >
+          {subheading}
+        </motion.p>
       </div>
     </header>
   );

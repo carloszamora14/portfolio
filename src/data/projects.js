@@ -47,7 +47,7 @@ const projects = [
         title: 'Useful links',
         data: [
           {
-            text: 'Framer Prototype',
+            text: 'Framer prototype',
             url: 'https://framer.com/share/Lumina--6GzRhTjnlyaKSubc3N4a/SxpIYKvr5',
           },
         ],

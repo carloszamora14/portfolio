@@ -2,13 +2,13 @@ section.wrapper {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: clamp(2rem, 2rem + 2.2222vw, 4rem);
 }
 
 .title {
   font-family: var(--ff-headings);
   font-weight: var(--fw-bold);
-  font-size: var(--fs-lg);
+  font-size: var(--fs-xl);
   color: var(--clr-midnight-blue);
 }
 
@@ -20,11 +20,11 @@ section.wrapper {
   }
 
   .wrapper.row .title {
-    min-width: 35%;
-    max-width: 35%;
+    width: 35%;
   }
 
   .wrapper.row .content {
     flex-grow: 1;
+    width: 65%;
   }
 }

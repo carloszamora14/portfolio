@@ -1,6 +1,6 @@
-import styles from './Paragraph.module.css';
+import styles from './ProjectSection.module.css';
 
-function Paragraph({ title, children, orientation = 'row' }) {
+function ProjectSection({ title, children, orientation = 'row' }) {
   return (
     <section
       className={`container ${styles.wrapper} ${orientation === 'row' ? styles.row : ''}`}
@@ -11,4 +11,4 @@ function Paragraph({ title, children, orientation = 'row' }) {
   );
 }
 
-export default Paragraph;
+export default ProjectSection;

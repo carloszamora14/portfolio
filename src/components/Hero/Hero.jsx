@@ -18,7 +18,7 @@ function Hero() {
       id="home"
       style={{ '--header-height': `${headerHeight}px` }}
     >
-      <div className="container" style={{ position: 'relative' }}>
+      <div className={`container ${styles.contentWrapper}`}>
         <div className={`${styles.content}`}>
           <motion.h1
             variants={fadeIn('down', 0.2)}

@@ -111,7 +111,7 @@
 }
 
 .openButton {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 1.5rem + 1.0416vw, 2rem);
   color: var(--clr-dark);
 }
 

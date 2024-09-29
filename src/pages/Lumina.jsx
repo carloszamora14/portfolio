@@ -1,6 +1,8 @@
 import ProjectHeader from '../components/ProjectHeader/ProjectHeader';
-import Paragraph from '../components/Paragraph/Paragraph';
+import ProjectSection from '../components/ProjectSection/ProjectSection';
 import projects from '../data/projects';
+import ProjectInfo from '../components/ProjectInfo/ProjectInfo';
+import styles from '../styles/ProjectPage.module.css';
 
 function Lumina() {
   const projectData = projects.find(
@@ -13,24 +15,19 @@ function Lumina() {
         heading="Lumina"
         subheading="Prototype designed to help prevent gender-based violence"
       />
-      <div
-        className="container"
-        style={{
-          margin: '2rem auto',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
+
+      <figure className={`container ${styles.figureContainer}`}>
         <img
+          className={styles.image}
           src={projectData.images.mockups.src}
           alt={projectData.images.mockups.alt}
-          style={{ width: '100%' }}
         />
-      </div>
+      </figure>
 
-      <Paragraph title="What is Lumina">
-        <p style={{ fontSize: '1rem', lineHeight: '150%' }}>
+      <ProjectInfo projectInfo={projectData.info} />
+
+      <ProjectSection title="What is Lumina">
+        <p className={styles.paragraph}>
           A prototype of a mobile application aimed at preventing gender-based
           violence through a panic button that allows users to report abuse and
           dangerous situations in everyday life. Additionally, it provides
@@ -38,25 +35,20 @@ function Lumina() {
           levels of risk. The app aims to identify high-risk areas and promote
           greater physical and overall safety for women and girls.
         </p>
-      </Paragraph>
-      <Paragraph title="Purpose">
-        <p style={{ marginTop: '1rem', fontSize: '1rem', lineHeight: '150%' }}>
+      </ProjectSection>
+
+      <ProjectSection title="Purpose">
+        <p className={styles.paragraph}>
           We care about the mental and physical well-being of all Mexican women
           and girls. They all deserve to live in peace, security, and
           fulfillment. Our app is a tool to break the chains of violence imposed
           on women by society through a tool that provides immediate help and
           risk-level mapping.
         </p>
-      </Paragraph>
-      <Paragraph title="Development process" orientation="col">
-        <p
-          style={{
-            marginTop: '1rem',
-            fontSize: '1rem',
-            lineHeight: '150%',
-            maxWidth: '75%',
-          }}
-        >
+      </ProjectSection>
+
+      <ProjectSection title="Development process" orientation="col">
+        <p className={`${styles.paragraph} ${styles.col}`}>
           This was a collaborative project with a team of six members, and our
           goal was to design and propose an application that addresses a
           pressing social issue affecting our community. We used the SCRUM
@@ -70,33 +62,25 @@ function Lumina() {
           working on a collaborative project, and although it was stressful for
           both my team and me, I am proud of what we accomplished.
         </p>
-        <img
-          src={projectData.images.sprintBacklog.src}
-          alt={projectData.images.sprintBacklog.alt}
-          style={{ width: '100%', marginTop: '2rem' }}
-          loading="lazy"
-          decoding="async"
-        />
-      </Paragraph>
-      <Paragraph title="My contribution">
-        <p
-          style={{
-            fontSize: '1rem',
-            lineHeight: '150%',
-          }}
-        >
+        <figure className={styles.figure}>
+          <img
+            className={styles.image}
+            src={projectData.images.sprintBacklog.src}
+            alt={projectData.images.sprintBacklog.alt}
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+      </ProjectSection>
+
+      <ProjectSection title="My contribution">
+        <p className={styles.paragraph}>
           In our team, everyone participated in defining the functional and
           non-functional requirements, creating the product backlog and sprint
           backlog, and deciding on user interface elements, color palette, and
           early mockups.
         </p>
-        <p
-          style={{
-            fontSize: '1rem',
-            lineHeight: '150%',
-            marginTop: '1rem',
-          }}
-        >
+        <p className={styles.paragraph}>
           I specifically focused on the signup process, which involved several
           steps for users to complete before using the app. First, users fill
           out a form with their name, CURP, birthdate, and password. Then, they
@@ -105,16 +89,10 @@ function Lumina() {
           dangerous situation. Additionally, I was responsible for the profile
           screen, where users can edit their information.
         </p>
-      </Paragraph>
-      <Paragraph title="Style guide" orientation="col">
-        <p
-          style={{
-            fontSize: '1rem',
-            lineHeight: '150%',
-            maxWidth: '75%',
-            marginTop: '1rem',
-          }}
-        >
+      </ProjectSection>
+
+      <ProjectSection title="Style guide" orientation="col">
+        <p className={`${styles.paragraph} ${styles.col}`}>
           The color palette for Lumina reflects warmth, empathy, and
           empowerment, using soft tones to evoke calm and safety, while bolder
           purples emphasize strength. For the typography, Dongle offers a
@@ -122,14 +100,16 @@ function Lumina() {
           structured touch to keep the design modern and clear. Both fonts
           ensure the app remains easy to navigate and user-friendly.
         </p>
-        <img
-          src={projectData.images.styleGuide.src}
-          alt={projectData.images.styleGuide.alt}
-          style={{ width: '100%', margin: '2rem 0 3rem' }}
-          loading="lazy"
-          decoding="async"
-        />
-      </Paragraph>
+        <figure className={styles.figure}>
+          <img
+            className={styles.image}
+            src={projectData.images.styleGuide.src}
+            alt={projectData.images.styleGuide.alt}
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+      </ProjectSection>
     </main>
   );
 }

@@ -11,6 +11,8 @@
   font-family: var(--ff-text);
   font-weight: var(--fw-regular);
   font-size: var(--fs-sm);
+  line-height: 1.5;
+  text-wrap: pretty;
   color: var(--clr-light-gray);
   margin-top: 2rem;
 }

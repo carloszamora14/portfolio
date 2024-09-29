@@ -30,7 +30,7 @@ function Header() {
       ref={headerRef}
       className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}
     >
-      <div className={`${styles.headerWrapper} container`}>
+      <div className={`container ${styles.headerWrapper}`}>
         <Logo />
         <Nav />
         <NavMobile />

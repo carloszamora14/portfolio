@@ -7,7 +7,7 @@ import MovieFinder from './pages/MovieFinder';
 import Lumina from './pages/Lumina';
 import DailyUIChallenge from './pages/DailyUIChallenge';
 import DonaBikes from './pages/DonaBikes';
-import './styles.css';
+import './styles/index.css';
 
 function App() {
   return (

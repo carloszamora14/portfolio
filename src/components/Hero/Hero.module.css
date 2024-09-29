@@ -9,6 +9,10 @@
   width: 100%;
 }
 
+.contentWrapper {
+  position: relative;
+}
+
 .content {
   position: relative;
   margin: 0 auto;
@@ -41,6 +45,7 @@
   font-weight: var(--fw-regular);
   font-size: var(--fs-md);
   line-height: 1.5;
+  text-wrap: pretty;
   color: var(--clr-darkish-gray);
   max-width: 48rem;
   margin: 1.25rem auto 2rem;

@@ -132,6 +132,17 @@ function DonaBikes() {
           reflecting their focus on efficiency and productivity, and are
           supported by text that highlights key information.
         </motion.p>
+        <motion.figure
+          {...createMotionConfig('down', 0.2)}
+          className={styles.videoWrapper}
+        >
+          <iframe
+            src={projectData.vimeoUrl}
+            className={styles.video}
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+            title="Dona bikes - Mobile design"
+          ></iframe>
+        </motion.figure>
       </ProjectSection>
     </main>
   );

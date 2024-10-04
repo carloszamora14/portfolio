@@ -5,7 +5,9 @@ import luminaStyleGuide from '../assets/lumina/style-guide.png';
 
 import dailyChallengeCover from '../assets/daily-ui-challenge/cover.png';
 import dailyChallengeWebsite from '../assets/daily-ui-challenge/website.png';
-import dailyChallengeShowcase from '../assets/daily-ui-challenge/showcase.png';
+import dailyChallengeShowcaseLowRes from '../assets/daily-ui-challenge/showcase-1440.png';
+import dailyChallengeShowcaseMediumRes from '../assets/daily-ui-challenge/showcase-2560.png';
+import dailyChallengeShowcaseHighRes from '../assets/daily-ui-challenge/showcase-4000.png';
 
 import emoiqCover from '../assets/emoiq/cover.png';
 import emoiqMockups from '../assets/emoiq/mockups.png';
@@ -106,7 +108,11 @@ const projects = [
         alt: 'Website displaying a scrollable carousel of all the UI designs created in this project.',
       },
       showcase: {
-        src: dailyChallengeShowcase,
+        src: {
+          lowRes: dailyChallengeShowcaseLowRes,
+          mediumRes: dailyChallengeShowcaseMediumRes,
+          highRes: dailyChallengeShowcaseHighRes,
+        },
         alt: '4-column grid of a collection of mobile UI designs from different types of applications.',
       },
     },
@@ -209,6 +215,8 @@ const projects = [
     description:
       'A design and prototype created in Figma for a fictional bike shop.',
     url: '/dona-bikes',
+    vimeoUrl:
+      'https://player.vimeo.com/video/896413374?badge=0&amp;autopause=0',
     info: {
       tools: {
         title: 'Design tools and practices used',

@@ -72,8 +72,8 @@ function Emoiq() {
               {...createMotionConfig('down', 0.2)}
               className={styles.listItem}
             >
-              <strong>Comprehensive information:</strong> Users will have access
-              to clear and concise information about emotional intelligence. The
+              <b>Comprehensive information:</b> Users will have access to clear
+              and concise information about emotional intelligence. The
               application will provide precise definitions and clear
               explanations to help users understand fundamental concepts.
             </motion.li>
@@ -81,8 +81,8 @@ function Emoiq() {
               {...createMotionConfig('down', 0.2)}
               className={styles.listItem}
             >
-              <strong>Practical tips:</strong> The app will offer practical tips
-              and recommendations related to managing emotions in everyday
+              <b>Practical tips:</b> The app will offer practical tips and
+              recommendations related to managing emotions in everyday
               situations. These tips will be based on solid research and can be
               easily applied in daily life.
             </motion.li>
@@ -90,19 +90,18 @@ function Emoiq() {
               {...createMotionConfig('down', 0.2)}
               className={styles.listItem}
             >
-              <strong>Interactive exercises:</strong> Users will be able to
-              participate in a series of exercises specifically designed to
-              practice and develop emotional intelligence. These practical
-              exercises will help users apply the concepts learned in real-life
-              situations, thereby improving their ability to handle complex
-              emotions.
+              <b>Interactive exercises:</b> Users will be able to participate in
+              a series of exercises specifically designed to practice and
+              develop emotional intelligence. These practical exercises will
+              help users apply the concepts learned in real-life situations,
+              thereby improving their ability to handle complex emotions.
             </motion.li>
             <motion.li
               {...createMotionConfig('down', 0.2)}
               className={styles.listItem}
             >
-              <strong>User-friendly interface:</strong> The application will
-              have an intuitive and attractive user interface that facilitates
+              <b>User-friendly interface:</b> The application will have an
+              intuitive and attractive user interface that facilitates
               navigation and access to content. Users will easily find the
               information they are looking for and participate in exercises with
               ease.

@@ -72,13 +72,24 @@ function DailyUIChallenge() {
           {...createMotionConfig('down', 0.2, 0.1)}
           className={styles.figure}
         >
-          <img
-            className={styles.image}
-            src={projectData.images.showcase.src}
-            alt={projectData.images.showcase.alt}
-            loading="lazy"
-            decoding="async"
-          />
+          <picture>
+            <source
+              media="(min-width: 1280px)"
+              srcSet={`${projectData.images.showcase.src.highRes} 1x`}
+            />
+            <source
+              media="(min-width: 768px)"
+              srcSet={`${projectData.images.showcase.src.mediumRes} 1x, ${projectData.images.showcase.src.highRes} 2x`}
+            />
+            <img
+              className={styles.image}
+              src={projectData.images.showcase.src.lowRes}
+              srcSet={`${projectData.images.showcase.src.lowRes} 1x, ${projectData.images.showcase.src.mediumRes} 2x`}
+              alt={projectData.images.showcase.alt}
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
         </motion.figure>
       </ProjectSection>
     </main>

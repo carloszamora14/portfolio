@@ -1,5 +1,5 @@
 .footer {
-  margin-top: clamp(2rem, 2rem + 3.3333vw, 5rem);
+  margin-top: var(--section-gap);
   background-color: var(--clr-dark);
 }
 

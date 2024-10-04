@@ -51,7 +51,6 @@
   color: var(--clr-electric-blue);
 }
 
-
 @media screen and (min-width: 48rem) {
   .grid {
     flex-direction: row;

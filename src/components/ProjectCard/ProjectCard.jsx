@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { BsArrowRight } from 'react-icons/bs';
 import styles from './ProjectCard.module.css';
 
 function ProjectCard({ img, imgAlt, projectName, description, url }) {
@@ -23,6 +24,7 @@ function ProjectCard({ img, imgAlt, projectName, description, url }) {
             aria-label={`Learn more about the ${projectName} project`}
           >
             Read more
+            <BsArrowRight className={styles.icon} aria-hidden="true" />
           </Link>
         </figcaption>
       </figure>

@@ -24,29 +24,37 @@
 }
 
 .button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   text-decoration: none;
-  padding: 0.75em 1em;
-  background-color: var(--clr-dark-gray);
+  font-weight: var(--fw-medium);
   font-size: var(--fs-xs);
-  color: var(--clr-white);
+  color: var(--clr-dark-gray);
+  padding: 0.75em 1em;
   margin-top: 1.5rem;
-  border-radius: 0.375em;
+  border: 1px solid var(--clr-dark-gray);
+  border-radius: 50vw;
   cursor: pointer;
   transition:
     background-color 250ms ease,
     color 250ms ease;
 }
 
+.icon {
+  font-size: var(--fs-md);
+}
+
 @media (hover: hover) and (pointer: fine) {
   .button:hover {
     background-color: var(--clr-dark);
-    color: pink;
+    color: var(--clr-lavender);
   }
 }
 
 .button:focus {
   background-color: var(--clr-dark);
+  color: var(--clr-lavender);
   outline-offset: 3px;
 }
 
@@ -58,6 +66,16 @@
   color: var(--clr-lavender);
   border-radius: 2rem;
   overflow: hidden;
+}
+
+.itsMeIcon {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 30%;
+  height: auto;
+  color: var(--clr-midnight-blue);
+  z-index: var(--z-index-foreground);
 }
 
 .profileImage {

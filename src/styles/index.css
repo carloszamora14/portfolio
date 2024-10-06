@@ -42,7 +42,7 @@
   --z-index-header: 10;
   --z-index-menu: 100;
 
-  --section-gap: clamp(2rem, 2rem + 4.4444vw, 6rem);
+  --section-gap: clamp(3rem, 3rem + 5.5555vw, 8rem);
 }
 
 html {

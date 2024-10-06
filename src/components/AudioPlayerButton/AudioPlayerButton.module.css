@@ -2,6 +2,7 @@
   position: fixed;
   bottom: 1.25rem;
   right: 1.25rem;
+  z-index: var(--z-index-overlay);
 }
 
 .button {
@@ -11,7 +12,6 @@
   border-radius: 0.25rem;
   background-color: var(--clr-green);
   cursor: pointer;
-  z-index: var(--z-index-overlay);
   opacity: 0.5;
   transition:
     background-color 300ms ease-in-out,

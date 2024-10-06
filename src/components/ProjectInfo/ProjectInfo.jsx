@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { RxExternalLink } from 'react-icons/rx';
 import createMotionConfig from '../../utils/fadeIn';
 import styles from './ProjectInfo.module.css';
 
@@ -31,13 +32,12 @@ function ProjectInfo({ projectInfo }) {
             <ul className={styles.linksList}>
               {projectInfo.links.data.map(link => (
                 <li key={link.url}>
-                  <a
-                    href={link.url}
-                    className={styles.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href={link.url} className={styles.link}>
                     {link.text}
+                    <RxExternalLink
+                      className={styles.icon}
+                      aria-hidden="true"
+                    />
                   </a>
                 </li>
               ))}

@@ -71,6 +71,12 @@
   height: var(--icon-size);
 }
 
+@media screen and (min-width: 48rem) {
+  .contentWrapper {
+    gap: 2rem;
+  }
+}
+
 @media screen and (min-width: 80rem) {
   .contentWrapper {
     flex-direction: row;

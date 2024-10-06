@@ -3,9 +3,11 @@ import styles from './Button.module.css';
 
 function Button({ children, to, scrollOffset }) {
   return (
-    <Link smooth to={to} className={styles.button} scroll={scrollOffset}>
-      {children}
-    </Link>
+    <div className={styles.wrapper}>
+      <Link smooth to={to} className={styles.button} scroll={scrollOffset}>
+        {children}
+      </Link>
+    </div>
   );
 }
 

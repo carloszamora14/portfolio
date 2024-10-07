@@ -14,7 +14,7 @@
   font-size: var(--fs-sm);
   line-height: 1.5;
   text-wrap: pretty;
-  color: var(--clr-darkish-gray);
+  color: var(--clr-neutral-500);
   margin-top: 1.25em;
   max-width: 60rem;
 }

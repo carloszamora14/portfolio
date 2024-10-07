@@ -1,8 +1,8 @@
 .card {
   height: 100%;
-  border: 1px solid #eeebeb;
+  border: 1px solid var(--clr-neutral-200);
   border-radius: 0.5rem;
-  background-color: #ffffff;
+  background-color: rgb(255, 255, 255);
   transition:
     box-shadow 250ms ease,
     transform 250ms ease-in-out;
@@ -52,7 +52,7 @@
   font-family: var(--ff-headings);
   font-weight: var(--fw-semi-bold);
   font-size: var(--fs-lg);
-  color: var(--clr-midnight-blue);
+  color: var(--clr-blue-200);
   margin-bottom: 0.5rem;
 }
 
@@ -61,7 +61,7 @@
   font-size: var(--fs-xs);
   line-height: 1.5;
   text-wrap: pretty;
-  color: var(--clr-darkish-gray);
+  color: var(--clr-neutral-500);
   margin-bottom: 3rem;
 }
 

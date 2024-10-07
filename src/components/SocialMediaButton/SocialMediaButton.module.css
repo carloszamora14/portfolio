@@ -2,15 +2,15 @@
   display: inline-block;
   font-family: var(--ff-text);
   text-decoration: none;
-  color: var(--clr-light-gray);
+  color: var(--clr-neutral-300);
   border-radius: 50vw;
-  border: 1px solid var(--clr-light-gray);
+  border: 1px solid var(--clr-neutral-300);
   overflow: hidden;
   outline-offset: 3px;
 }
 
 .link:active {
-  border-color: var(--clr-gray);
+  border-color: var(--clr-neutral-400);
 }
 
 .link:active .iconWrapper {
@@ -43,7 +43,7 @@
   top: 50%;
   left: 50%;
   line-height: 1;
-  color: var(--clr-light-gray);
+  color: var(--clr-neutral-300);
   transform: translate(-50%, -50%);
 }
 

@@ -1,6 +1,6 @@
 .footer {
   margin-top: var(--section-gap);
-  background-color: var(--clr-dark);
+  background-color: var(--clr-neutral-700);
 }
 
 .contentWrapper {
@@ -13,7 +13,7 @@
   font-size: var(--fs-sm);
   line-height: 1.5;
   text-wrap: pretty;
-  color: var(--clr-light-gray);
+  color: var(--clr-neutral-300);
   margin-top: 2rem;
 }
 
@@ -32,7 +32,7 @@
   font-weight: var(--fw-semi-bold);
   font-size: var(--fs-sm);
   text-decoration: none;
-  color: var(--clr-green);
+  color: var(--clr-teal-100);
   transition:
     opacity 200ms ease-in-out,
     color 250ms ease-in-out;
@@ -59,7 +59,7 @@
   font-family: var(--ff-text);
   font-weight: var(--fw-light);
   font-size: var(--fs-xs);
-  color: var(--clr-light-gray);
+  color: var(--clr-neutral-300);
   text-transform: uppercase;
 }
 
@@ -68,7 +68,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 2rem 0;
-  border-top: 1px solid var(--clr-light-gray);
+  border-top: 1px solid var(--clr-neutral-300);
 }
 
 .heart {
@@ -112,7 +112,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .email:hover {
-    color: var(--clr-lavender);
+    color: var(--clr-purple-100);
   }
 
   .email:hover .emailIcon {

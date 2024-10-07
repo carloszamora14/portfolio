@@ -23,16 +23,16 @@
   font-size: var(--fs-hero);
   font-weight: var(--fw-bold);
   font-family: var(--ff-headings);
-  color: var(--clr-dark);
+  color: var(--clr-neutral-700);
   line-height: 1.1;
 }
 
 .name {
   background: linear-gradient(
     90deg,
-    var(--clr-purple),
-    var(--clr-teal),
-    var(--clr-electric-blue)
+    var(--clr-purple-200),
+    var(--clr-teal-200),
+    var(--clr-blue-100)
   );
   background-clip: text;
   -webkit-background-clip: text;
@@ -46,7 +46,7 @@
   font-size: var(--fs-md);
   line-height: 1.5;
   text-wrap: pretty;
-  color: var(--clr-darkish-gray);
+  color: var(--clr-neutral-500);
   max-width: 48rem;
   margin: 1.25rem auto 2rem;
 }
@@ -73,7 +73,7 @@
   --width: clamp(4rem, 10vw, 9rem);
   --height: clamp(4rem, 10vw, 9rem);
   --facing: -1;
-  --fill: var(--clr-turquoise);
+  --fill: var(--clr-teal-300);
   --delay: -500ms;
 
   position: absolute;
@@ -85,7 +85,7 @@
   --width: clamp(2.88rem, 8vw, 7.2rem);
   --height: clamp(2.88rem, 8vw, 7.2rem);
   --facing: 1;
-  --fill: var(--clr-purple);
+  --fill: var(--clr-purple-200);
   --delay: 0ms;
 
   position: absolute;
@@ -97,7 +97,7 @@
   --width: clamp(5.04rem, 13vw, 12.6rem);
   --height: clamp(5.04rem, 13vw, 12.6rem);
   --facing: -1;
-  --fill: var(--clr-green);
+  --fill: var(--clr-teal-100);
   --delay: -1100ms;
 
   position: absolute;

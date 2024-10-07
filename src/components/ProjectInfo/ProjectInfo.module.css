@@ -9,7 +9,7 @@
   font-family: var(--ff-headings);
   font-weight: var(--fw-semi-bold);
   font-size: var(--fs-sm);
-  color: var(--clr-midnight-blue);
+  color: var(--clr-blue-200);
   margin-bottom: 0.5rem;
 }
 
@@ -17,7 +17,7 @@
   font-family: var(--ff-text);
   font-weight: var(--fw-light);
   font-size: var(--fs-sm);
-  color: var(--clr-darkish-gray);
+  color: var(--clr-neutral-500);
   text-wrap: pretty;
 }
 
@@ -34,7 +34,7 @@
   font-family: var(--ff-text);
   font-weight: var(--fw-light);
   font-size: var(--fs-sm);
-  color: var(--clr-darkish-gray);
+  color: var(--clr-neutral-500);
   padding: 0.25em;
   text-decoration: none;
   transition: color 250ms ease-in-out;
@@ -61,7 +61,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .link:hover {
-    color: var(--clr-electric-blue);
+    color: var(--clr-blue-100);
   }
 
   .link:hover::before {
@@ -71,7 +71,7 @@
 
 .link:active {
   transition: color 100ms ease-in-out;
-  color: var(--clr-electric-blue);
+  color: var(--clr-blue-100);
 }
 
 .link:active::before {

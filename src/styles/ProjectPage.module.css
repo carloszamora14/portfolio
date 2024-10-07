@@ -3,7 +3,7 @@
   font-size: var(--fs-sm);
   line-height: 1.5;
   text-wrap: pretty;
-  color: var(--clr-darkish-gray);
+  color: var(--clr-neutral-500);
 }
 
 .paragraph + .paragraph {
@@ -61,7 +61,7 @@ figure.figureContainer,
   font-family: var(--ff-headings);
   font-weight: var(--fw-semi-bold);
   font-size: var(--fs-md);
-  color: var(--clr-dark-purple);
+  color: var(--clr-purple-300);
 }
 
 .list {
@@ -74,7 +74,7 @@ figure.figureContainer,
   font-size: var(--fs-sm);
   line-height: 1.5;
   text-wrap: pretty;
-  color: var(--clr-darkish-gray);
+  color: var(--clr-neutral-500);
 }
 
 .listItem + .listItem {

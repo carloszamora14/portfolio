@@ -7,7 +7,7 @@
   position: relative;
   font-family: var(--ff-text);
   font-size: var(--fs-sm);
-  color: var(--clr-gray);
+  color: var(--clr-neutral-400);
   text-decoration: none;
   transition: color 200ms ease-in-out;
 }
@@ -28,7 +28,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .navLink:hover {
-    color: var(--clr-darkish-gray);
+    color: var(--clr-neutral-500);
   }
 
   .navLink:hover::before {
@@ -38,7 +38,7 @@
 
 .navLink:active,
 .navLink.active {
-  color: var(--clr-darkish-gray);
+  color: var(--clr-neutral-500);
 }
 
 .navLink.active::before {

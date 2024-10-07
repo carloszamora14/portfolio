@@ -8,13 +8,13 @@
   font-family: var(--ff-headings);
   font-weight: var(--fw-bold);
   font-size: var(--fs-xxl);
-  color: var(--clr-midnight-blue);
+  color: var(--clr-blue-200);
 }
 
 .subheading {
   font-family: var(--ff-text);
   font-weight: var(--fw-regular);
   font-size: var(--fs-sm);
-  color: var(--clr-darkish-gray);
+  color: var(--clr-neutral-500);
   margin-top: 0.25rem;
 }

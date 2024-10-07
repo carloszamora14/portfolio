@@ -1,21 +1,26 @@
 :root {
-  --clr-white: #fdfbfb;
   --clr-red: #ef4770;
-  --clr-green: #0dd6c3;
-  --clr-teal: #15e2e2;
-  --clr-turquoise: #34daef;
   --clr-yellow: #c3ec50;
-  --clr-purple: #ae75db;
-  --clr-dark-purple: #815c7f;
-  --clr-dark: #161615;
-  --clr-lavender: #f3e4ff;
-  --clr-electric-blue: #1700fe;
-  --clr-midnight-blue: #073758;
-  --clr-light-gray: #9b9c9c;
-  --clr-gray: #676a6a;
-  --clr-dark-gray: #2c2c2c;
-  --clr-darkish-gray: #4b4b4b;
-  --clr-white-overlay: #fdfbfb20;
+
+  --clr-teal-100: #0dd6c3;
+  --clr-teal-200: #15e2e2;
+  --clr-teal-300: #34daef;
+  --clr-teal-transparent: #34d9ef1b;
+
+  --clr-purple-100: #f3e4ff;
+  --clr-purple-200: #ae75db;
+  --clr-purple-300: #815c7f;
+
+  --clr-blue-100: #1700fe;
+  --clr-blue-200: #073758;
+
+  --clr-neutral-100: #fdfbfb;
+  --clr-neutral-200: #eeebeb;
+  --clr-neutral-300: #9b9c9c;
+  --clr-neutral-400: #676a6a;
+  --clr-neutral-500: #4b4b4b;
+  --clr-neutral-600: #2c2c2c;
+  --clr-neutral-700: #161615;
 
   --ff-headings: 'Poppins', sans-serif;
   --ff-text: 'Inter', sans-serif;
@@ -83,7 +88,7 @@ img {
 
 body {
   font-family: var(--ff-text);
-  background-color: var(--clr-white);
+  background-color: var(--clr-neutral-100);
   width: 100%;
 }
 

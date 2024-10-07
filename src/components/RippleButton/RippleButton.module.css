@@ -2,8 +2,8 @@
   position: relative;
   display: inline-block;
   text-decoration: none;
-  color: var(--clr-dark-gray);
-  border: 1px solid var(--clr-dark-gray);
+  color: var(--clr-neutral-600);
+  border: 1px solid var(--clr-neutral-600);
   border-radius: 50vw;
   overflow: hidden;
   cursor: pointer;
@@ -14,7 +14,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-color: var(--clr-dark-gray);
+  background-color: var(--clr-neutral-600);
   clip-path: circle(0% at 0 50%);
   transition: clip-path 250ms ease-in-out;
   z-index: var(--z-index-default);
@@ -31,7 +31,7 @@
   }
 
   .button:hover {
-    color: var(--clr-lavender);
+    color: var(--clr-purple-100);
   }
 }
 
@@ -40,7 +40,7 @@
 }
 
 .button:focus-visible {
-  color: var(--clr-lavender);
+  color: var(--clr-purple-100);
   outline-offset: 3px;
 }
 
@@ -48,8 +48,8 @@
   transition:
     color 100ms ease-in-out,
     background-color 100ms ease-in-out;
-  color: var(--clr-lavender);
-  background-color: var(--clr-dark-gray);
+  color: var(--clr-purple-100);
+  background-color: var(--clr-neutral-600);
 }
 
 .ripple {
@@ -57,7 +57,7 @@
   border-radius: 50%;
   transform: scale(0);
   animation: ripple 600ms linear;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgb(255 255 255 / 0.25);
 }
 
 @keyframes ripple {

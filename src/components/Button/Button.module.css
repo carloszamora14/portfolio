@@ -2,7 +2,7 @@
   position: relative;
   display: inline-block;
   width: fit-content;
-  background-color: var(--clr-dark);
+  background-color: var(--clr-neutral-700);
   z-index: var(--z-index-default);
   border-radius: 50vw;
   transition: transform 250ms ease-in;
@@ -19,14 +19,14 @@
   border: none;
   border-radius: inherit;
   background-color: transparent;
-  color: var(--clr-white);
+  color: var(--clr-neutral-100);
   cursor: pointer;
   outline-offset: 4px;
 }
 
 .button::before {
-  --clr-border: var(--clr-dark);
-  --clr-glow: var(--clr-white);
+  --clr-border: var(--clr-neutral-700);
+  --clr-glow: var(--clr-neutral-100);
 
   content: '';
   position: absolute;
@@ -47,7 +47,7 @@
   position: absolute;
   display: block;
   inset: 0.125rem;
-  background-color: var(--clr-dark);
+  background-color: var(--clr-neutral-700);
   border-radius: inherit;
   z-index: var(--z-index-background);
   transition: background-color 300ms ease;
@@ -58,11 +58,11 @@
 }
 
 .wrapper:hover .button::before {
-  --clr-border: var(--clr-dark-gray);
+  --clr-border: var(--clr-neutral-600);
 }
 
 .wrapper:hover .button::after {
-  background-color: var(--clr-dark-gray);
+  background-color: var(--clr-neutral-600);
 }
 
 @property --angle {

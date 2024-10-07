@@ -3,7 +3,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  color: var(--clr-darkish-gray);
+  color: var(--clr-neutral-500);
   text-decoration: none;
   outline: none;
 }
@@ -27,7 +27,7 @@
 }
 
 .logo:active .logoText {
-  color: var(--clr-gray);
+  color: var(--clr-neutral-400);
   transform: scale(0.85);
 }
 
@@ -60,11 +60,11 @@
 }
 
 .star:nth-child(2) path {
-  fill: var(--clr-purple);
+  fill: var(--clr-purple-200);
 }
 
 .star:nth-child(3) path {
-  fill: var(--clr-turquoise);
+  fill: var(--clr-teal-300);
 }
 
 .logo:active .star {
@@ -73,7 +73,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .logoText:hover {
-    color: var(--clr-gray);
+    color: var(--clr-neutral-400);
   }
 
   .iconWrapper:hover .star {

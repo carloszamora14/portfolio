@@ -9,7 +9,7 @@ section.wrapper {
   font-family: var(--ff-headings);
   font-weight: var(--fw-bold);
   font-size: var(--fs-xl);
-  color: var(--clr-midnight-blue);
+  color: var(--clr-blue-200);
 }
 
 @media screen and (min-width: 48rem) {

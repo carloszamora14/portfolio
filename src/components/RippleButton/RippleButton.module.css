@@ -1,0 +1,68 @@
+.button {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--clr-dark-gray);
+  border: 1px solid var(--clr-dark-gray);
+  border-radius: 50vw;
+  overflow: hidden;
+  cursor: pointer;
+  transition: color 250ms ease;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--clr-dark-gray);
+  clip-path: circle(0% at 0 50%);
+  transition: clip-path 250ms ease-in-out;
+  z-index: var(--z-index-default);
+}
+
+.button > * {
+  position: relative;
+  z-index: var(--z-index-foreground);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover::before {
+    clip-path: circle(150% at 0 50%);
+  }
+
+  .button:hover {
+    color: var(--clr-lavender);
+  }
+}
+
+.button:focus-visible::before {
+  clip-path: circle(150% at 0 50%);
+}
+
+.button:focus-visible {
+  color: var(--clr-lavender);
+  outline-offset: 3px;
+}
+
+.button:active {
+  transition:
+    color 100ms ease-in-out,
+    background-color 100ms ease-in-out;
+  color: var(--clr-lavender);
+  background-color: var(--clr-dark-gray);
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}

@@ -77,6 +77,8 @@ function NavMobile() {
         onClick={() => setIsOpen(!isOpen)}
         className={styles.openButton}
         aria-label="Toggle menu"
+        aria-controls="primary-navigation"
+        aria-expanded={isOpen}
       >
         <RiMenu2Line />
       </button>
@@ -90,13 +92,15 @@ function NavMobile() {
             onClick={handleClose}
             className={styles.closeButton}
             aria-label="Close menu"
+            aria-controls="primary-navigation"
+            aria-expanded={isOpen}
             tabIndex={isOpen ? 0 : -1}
             ref={firstElementRef}
           >
             <IoCloseOutline />
           </button>
 
-          <nav ref={navRef} className={styles.nav}>
+          <nav ref={navRef} className={styles.nav} id="primary-navigation">
             <div className={styles.gradientBackground} aria-hidden="true" />
 
             <ul className={styles.navList}>

@@ -65,42 +65,26 @@
   margin-bottom: 3rem;
 }
 
-.button {
+.buttonWrapper {
+  align-self: start;
+  margin-top: auto;
+}
+
+.buttonContent {
   display: flex;
   align-items: center;
   gap: 0.375rem;
-  align-self: start;
   font-size: var(--fs-xs);
-  text-decoration: none;
-  color: var(--clr-dark-gray);
   padding: 0.6875em 1.125em;
-  margin-top: auto;
-  border: 1px solid var(--clr-dark-gray);
-  border-radius: 50vw;
-  cursor: pointer;
-  transition:
-    background-color 250ms ease,
-    color 250ms ease;
 }
 
-.icon {
+.buttonIcon {
   font-size: var(--fs-md);
   transition: transform 250ms ease-in-out;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .button:hover {
-    background-color: var(--clr-dark);
-    color: var(--clr-lavender);
-  }
-
-  .button:hover .icon {
+  .buttonContent:hover .buttonIcon {
     transform: translateX(3px);
   }
-}
-
-.button:focus {
-  background-color: var(--clr-dark);
-  color: var(--clr-lavender);
-  outline-offset: 3px;
 }

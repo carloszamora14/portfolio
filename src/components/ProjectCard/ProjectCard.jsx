@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import { BsArrowRight } from 'react-icons/bs';
 import styles from './ProjectCard.module.css';
+import RippleButton from '../RippleButton/RippleButton';
 
 function ProjectCard({ img, imgAlt, projectName, description, url }) {
   return (
@@ -18,14 +18,20 @@ function ProjectCard({ img, imgAlt, projectName, description, url }) {
         <figcaption className={styles.details}>
           <h3 className={styles.title}>{projectName}</h3>
           <p className={styles.description}>{description}</p>
-          <Link
-            to={url}
-            className={styles.button}
-            aria-label={`Learn more about the ${projectName} project`}
-          >
-            Read more
-            <BsArrowRight className={styles.icon} aria-hidden="true" />
-          </Link>
+          <div className={styles.buttonWrapper}>
+            <RippleButton
+              to={url}
+              aria-label={`Learn more about the ${projectName} project`}
+            >
+              <span className={styles.buttonContent}>
+                Read more
+                <BsArrowRight
+                  className={styles.buttonIcon}
+                  aria-hidden="true"
+                />
+              </span>
+            </RippleButton>
+          </div>
         </figcaption>
       </figure>
     </article>
